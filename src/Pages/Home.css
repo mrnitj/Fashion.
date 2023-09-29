@@ -1,0 +1,27 @@
+*{
+    /* margin: 0; */
+    padding: 0.1rem 0.3rem 0  ;
+    box-sizing: border-box;
+    /* background-color: #f3f3f3; */
+}
+body{
+    background-color: #f3f3f3;
+
+}
+.sample1{
+    height: inherit;
+    background-color: aqua;
+    flex: 1;
+    padding: 0;
+    margin: 0;
+}
+.sample2{
+    height: 100%;
+    background-color: rgb(11, 31, 31);
+    flex: 1;
+}
+.sample3{
+    height: 100%;
+    background-color: rgb(128, 211, 59);
+    flex: 1;
+}
