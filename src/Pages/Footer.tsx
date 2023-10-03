@@ -3,7 +3,7 @@ import { CiMail } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";
 import { CiFacebook } from "react-icons/ci";
 
-const FooterPage = () => {
+const Footer = () => {
     return (
         <Stack sx={{ backgroundColor: "#D9D9D9", height: "40vh", borderRadius: "20px", padding: "0 2rem 0" }}>
             <Box
@@ -123,4 +123,4 @@ const FooterPage = () => {
     );
 };
 
-export default FooterPage;
+export default Footer;

@@ -5,9 +5,13 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 import { FaRegRegistered } from "react-icons/fa";
+import ModelsPage from "./ModelsPage";
+import AboutPage from "./AboutPage";
+import Footer from "./Footer";
 
 const Home = () => {
     return (
+        <>
         <Stack direction={"column"}>
             <Box
                 sx={{
@@ -113,6 +117,10 @@ const Home = () => {
             </Stack>
             <div style={{ borderBottom: "1px solid gray", width: "60%", margin: "0 auto" }}></div>
         </Stack>
+        <ModelsPage/>
+        <AboutPage/>
+        <Footer/>
+        </>
     );
 };
 
