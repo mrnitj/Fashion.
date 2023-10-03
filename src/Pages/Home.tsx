@@ -26,7 +26,7 @@ const Home = () => {
                     LOOKBOOK{" "}
                     <span>
                         <IconButton>
-                            {" "}
+                            {/* {" "} */}
                             <KeyboardArrowDownIcon fontSize="large" />
                         </IconButton>
                     </span>
@@ -49,8 +49,18 @@ const Home = () => {
             </Box>
 
             <Stack sx={{}}>
-                <Box sx={{ height: "90vh", backgroundColor: "lighgray", display: "flex", padding: "0", flexDirection: "" , alignItems:'center' , justifyContent:'space-between'}}>
-                    <Box className="sample1" sx={{ display: "flex", justifyContent: "center", flexDirection: "column"}}>
+                <Box
+                    sx={{
+                        height: "90vh",
+                        backgroundColor: "lighgray",
+                        display: "flex",
+                        padding: "0",
+                        flexDirection: "",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                    }}
+                >
+                    <Box className="sample1" sx={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
                         <Box width={"100%"} sx={{ position: "relative" }}>
                             <Box
                                 className="logo_main"
@@ -60,7 +70,7 @@ const Home = () => {
                                     alignItems: "center",
                                     position: "relative",
                                     left: "300px",
-                                    top: "25%",
+                                    top: "60px",
                                 }}
                             >
                                 <FaRegRegistered />
@@ -85,18 +95,23 @@ const Home = () => {
                         <img src="src\Assets\fashionjpg-removebg-preview.png" alt="" />
                     </Box>
                     <Box className="sample3">
-                        <Box className="sample">
-                            <Typography className="one" sx={{ transform: "rotate(90deg)", fontWeight: "700", fontSize: "63px", fontFamily:'Mina'}}>
+                        <Box className="sample" sx={{ marginRight: "2rem" }}>
+                            <Typography
+                                className="one"
+                                sx={{ transform: "rotate(90deg)", fontWeight: "700", fontSize: "63px", fontFamily: "Mina" }}
+                            >
                                 001
                             </Typography>
-                            <Typography sx={{fontFamily:'Mina', fontSize:'1.0.7rem'}}>
-                            light up <br/>your<br/> future
+                            <Typography sx={{ fontFamily: "Mina", fontSize: "1.0.7rem" }}>
+                                light up <br />
+                                your
+                                <br /> future
                             </Typography>
                         </Box>
                     </Box>
                 </Box>
             </Stack>
-            <div style={{borderBottom:'1px solid gray', width:'60%', margin:'0 auto'}}></div>
+            <div style={{ borderBottom: "1px solid gray", width: "60%", margin: "0 auto" }}></div>
         </Stack>
     );
 };

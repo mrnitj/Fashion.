@@ -1,75 +1,131 @@
+import "../Pages/ModelsPage.css";
+import { ModelData } from "../ModelDatas";
+import { Stack, Box, Typography, Card, CardMedia, CardContent, Button, IconButton } from "@mui/material";
 
-import '../Pages/ModelsPage.css'
-import {Stack, Box, Typography, Card, CardMedia, CardContent} from '@mui/material' 
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
-
-import { ModelData } from '../ModelDatas'
+import { useState } from "react";
 
 const ModelsPage = () => {
+    const [models, setModels] = useState<number>(3);
+    const [vis, setVis] = useState<string>("none");
 
-  return (
-    <Stack alignItems={'center'} spacing={2}>
-        <Typography variant='h4'
-        sx={{fontFamily:'Mina', fontWeight:'700', letterSpacing:'.3rem'}}
-        >
-            MODELS
-        </Typography>
+    const moreHandler = () => {
+        setModels(models + models);
+        setVis("");
+    };
+    const resetHandler = () => {
+        setModels(3);
+        setVis("none");
+    };
 
-        <Box sx={{backgroundColor:'lightlue', display:'flex' , justifyContent:'center', flexDirection:'column', alignItems:'center'}}>
-            {/* <Paper elevation={24}> */}
-            
-               {  ModelData.map((data,index) => (
-                <>
+    const slice = ModelData.slice(0, models);
 
-              {(index%2!=0) &&
+    return (
+        <Stack alignItems={"center"} spacing={2}>
+            <Typography variant="h4" sx={{ fontFamily: "Mina", fontWeight: "700", letterSpacing: ".3rem" }}>
+                MODELS
+            </Typography>
 
-                <Card style={{ display: "flex" , backgroundColor:'transparent', boxShadow:'none', width:'80%'}}>
-                    <CardMedia
-                        component={"img"}
-                        height={"100%"}
-                        style={{ width: "130px" }}
-                        image={data.img}
-                    />
-                    <Stack sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
-                        <CardContent >
-                           
-                            <Typography variant="body2" color={"text.secondary"} width={'100%'} fontSize={'18px'} fontFamily={'Mina'} fontWeight={'700'} sx={{color:'black'}}>
-                                {data.desc}
-                            </Typography>
-                        </CardContent>
-                    </Stack>
-                </Card>
-             }
-             {
-                (index%2==0) &&
+            <Box
+                sx={{
+                    backgroundColor: "lightblu",
+                    display: "flex",
+                    flexDirection: "column",
+                    padding: "0 3rem 0",
+                    position: "relative",
+                }}
+            >
+                {/* <Paper elevation={24}> */}
 
-                
-                <Card style={{ display: "flex" , backgroundColor:'transparent', boxShadow:'none', width:'80%'}}>
-                    <Stack sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
-                        <CardContent >
-                            
-                            <Typography variant="body2" color={"text.secondary"} width={'100%'} fontSize={'18px'} fontFamily={'Mina'} fontWeight={'700'} sx={{color:'black'}}>
-                               {data.desc}
-                            </Typography>
-                        </CardContent>
-                    </Stack>
-                    <CardMedia
-                        component={"img"}
-                        height={"100%"}
-                        style={{ width: "130px" }}
-                        image={data.img}
-                    />
-                </Card>
-             }
+                {slice.map((data, index) => (
+                    <>
+                        {index % 2 == 0 && (
+                            <Card
+                                style={{
+                                    display: "flex",
+                                    backgroundColor: "transparent",
+                                    boxShadow: "none",
+                                    width: "70%",
+                                    height: "14rem",
+                                }}
+                            >
+                                <CardMedia component={"img"} height={"100%"} style={{ width: "200px" }} image={data.img} />
+                                <Stack sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                                    <CardContent>
+                                        <Typography
+                                            variant="body2"
+                                            color={"text.secondary"}
+                                            width={"100%"}
+                                            fontSize={"18px"}
+                                            fontFamily={"Mina"}
+                                            fontWeight={"700"}
+                                            sx={{ color: "black", paddingRight: "6rem" }}
+                                        >
+                                            {data.desc}
+                                        </Typography>
+                                    </CardContent>
+                                </Stack>
+                            </Card>
+                        )}
+                        {index % 2 != 0 && (
+                            <Card
+                                style={{
+                                    display: "flex",
+                                    backgroundColor: "transparent",
+                                    boxShadow: "none",
+                                    width: "70%",
+                                    alignSelf: "end",
+                                    height: "14rem",
+                                }}
+                            >
+                                <Stack sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                                    <CardContent>
+                                        <Typography
+                                            variant="body2"
+                                            color={"text.secondary"}
+                                            width={"100%"}
+                                            fontSize={"18px"}
+                                            fontFamily={"Mina"}
+                                            fontWeight={"700"}
+                                            sx={{ color: "black", paddingLeft: "6rem" }}
+                                        >
+                                            {data.desc}
+                                        </Typography>
+                                    </CardContent>
+                                </Stack>
+                                <CardMedia component={"img"} height={"100%"} style={{ width: "200px" }} image={data.img} />
+                            </Card>
+                        )}
+                    </>
+                ))}
 
-                </>
-             )) }
-            {/* </Paper> */}
-        </Box>
+                <Button
+                    onClick={moreHandler}
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        fontSize: "15px",
+                        marginTop: "6rem",
+                        color: "black",
+                        width: "5rem",
+                        alignSelf: "center",
+                    }}
+                >
+                    More
+                    <ExpandMoreIcon sx={{ position: "relative", bottom: "20px", fontSize: "50px" }} />
+                </Button>
+                <Box sx={{ position: "absolute", bottom: "70px", right: "0px", display: vis }}>
+                    <IconButton size="large" onClick={resetHandler}>
+                        <ExpandLessIcon sx={{ fontSize: "3rem" }} />
+                    </IconButton>
+                </Box>
+            </Box>
 
+            <div style={{ borderBottom: "1px solid gray", width: "60%", margin: "0 auto" }} />
+        </Stack>
+    );
+};
 
-    </Stack>
-  )
-}
-
-export default ModelsPage
+export default ModelsPage;

@@ -1,0 +1,13 @@
+.logo::before {
+    content: '';
+    height: 130px;
+    width: 175px;
+    background-color: #d9d9d9;
+    position: absolute; /* Position it absolutely within the parent */
+    left: -190px; /* Adjust the position */
+    top:0px;
+    
+    z-index: -1; /* Set a lower z-index to place it behind */
+
+    border-radius:20px;
+}
