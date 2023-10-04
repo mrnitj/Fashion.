@@ -95,11 +95,11 @@ const SignUpPage = () => {
                             fontFamily: "Mina",
                         }}
                     >
-                        Login
+                        SignUp
                     </Button>
                     <Typography sx={{ letterSpacing: "2px", fontFamily: "Mina" }}>
                         don’t have an account{" "}
-                        <span style={{ color: "blue", fontWeight: "700", cursor: "pointer" }}>Sign up</span>
+                        <span style={{ color: "blue", fontWeight: "700", cursor: "pointer" }}>Login</span>
                     </Typography>
                 </>
             </Stack>

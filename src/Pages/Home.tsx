@@ -1,4 +1,4 @@
-import "./Home.css";
+import './Home.css'
 
 import { Stack, Box, IconButton, Typography } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -12,8 +12,9 @@ import Footer from "./Footer";
 const Home = () => {
     return (
         <>
-        <Stack direction={"column"}>
-            <Box
+        <Stack  direction={"column"}>
+            <Box 
+                    className='Home_Navbar'
                 sx={{
                     backgroundColor: "lightblu",
                     height: "3rem",
@@ -52,8 +53,8 @@ const Home = () => {
                 </Box>
             </Box>
 
-            <Stack sx={{}}>
-                <Box
+            <Stack className="Home_content" sx={{}}>
+                <Box className='Home_content_box'
                     sx={{
                         height: "90vh",
                         backgroundColor: "lighgray",
@@ -64,10 +65,10 @@ const Home = () => {
                         justifyContent: "space-between",
                     }}
                 >
-                    <Box className="sample1" sx={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
+                    <Box className="Home_logo" sx={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
                         <Box width={"100%"} sx={{ position: "relative" }}>
                             <Box
-                                className="logo_main"
+                                className="Home_logo_R"
                                 fontSize={"2.5rem"}
                                 sx={{
                                     display: "flex",
@@ -79,10 +80,11 @@ const Home = () => {
                             >
                                 <FaRegRegistered />
                             </Box>
-                            <Typography sx={{ fontSize: "6rem", fontFamily: "Marko one", fontWeight: "bold" }}>
+                            <Typography className="Home_fashion" sx={{ fontSize: "6rem", fontFamily: "Marko one", fontWeight: "bold" }}>
                                 fashion.
                             </Typography>
                             <Typography
+                            className="Home_subtitle"
                                 width={"100%"}
                                 textAlign={"left"}
                                 fontFamily={"inter"}
@@ -98,15 +100,15 @@ const Home = () => {
                     <Box className="hero">
                         <img src="src\Assets\fashionjpg-removebg-preview.png" alt="" />
                     </Box>
-                    <Box className="sample3">
-                        <Box className="sample" sx={{ marginRight: "2rem" }}>
+                    <Box className="hero_right">
+                        <Box className="hero_right_content" sx={{ marginRight: "2rem" }}>
                             <Typography
                                 className="one"
                                 sx={{ transform: "rotate(90deg)", fontWeight: "700", fontSize: "63px", fontFamily: "Mina" }}
                             >
                                 001
                             </Typography>
-                            <Typography sx={{ fontFamily: "Mina", fontSize: "1.0.7rem" }}>
+                            <Typography className='two' sx={{ fontFamily: "Mina", fontSize: "1rem" }}>
                                 light up <br />
                                 your
                                 <br /> future
