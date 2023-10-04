@@ -27,7 +27,7 @@ body{
 
 .hero img{
   
-    height: 90%;
+    height: 100%;
     object-fit: cover;
 }
 .hero_right{
@@ -60,13 +60,18 @@ body{
 
 @media only screen and (max-width:920px){
 
-    .Home_content_box{
+    .Home_content{
         /* flex-direction: column; */
-        height: 90vh;
-        /* background-color: aqua; */
+        height:50vh;
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+    }
+    .Home_content_box{
+        height: 100%;
     }
     .hero{
-        height: 70%;
+        height:50%;
         /* background-color: red; */
     }
     .Home_fashion{
