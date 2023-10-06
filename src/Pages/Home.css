@@ -62,20 +62,22 @@ body{
 
     .Home_content{
         /* flex-direction: column; */
-        height:50vh;
-        background-color: aqua;
+        height:100vh;
+        /* background-color: aqua; */
         display: flex;
         justify-content: center;
+        padding: 0 2rem;
     }
     .Home_content_box{
         height: 100%;
+        /* background-color: aqua; */
     }
     .hero{
-        height:50%;
+        height:80%;
         /* background-color: red; */
     }
     .Home_fashion{
-        font-size:4.5rem ;
+        font-size:4.4rem ;
         /* color: antiquewhite; */
         
     }
@@ -86,11 +88,25 @@ body{
     .Home_Navbar{
         justify-content: space-evenly;
     }
+    
+    .Home_logo_R{
+        left: 220px;
+        top: 45px;
+        font-size: 1.8rem;
+    }
+}
+    .hero_right{
+        /* background-color: blue; */
+        /* margin-right: 43rem; */
+    }
+    .hero_right_content{
+        /* margin-right: 100px;
+        margin-right: 43rem; */
+
+    }
     .hero_right_content .one{
         font-size: 3.5rem;
     }
     .hero_right_content .two{
         font-size: .9rem;
     }
-
-}

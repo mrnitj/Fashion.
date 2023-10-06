@@ -1,4 +1,4 @@
-.logo::before {
+.R_logo::before {
     content: '';
     height: 130px;
     width: 175px;
@@ -10,4 +10,24 @@
     z-index: -1; /* Set a lower z-index to place it behind */
 
     border-radius:20px;
+}
+
+
+@media only screen and (max-width:920px){
+
+    .About_Main_Box{
+        /* height: 30vh !important; */
+    }
+    
+    
+    .About_Box_content {
+        /* width: 100% !important; */
+        /* background-color: red; */
+    }
+
+    .About_Box_content_P{
+        /* background-color: aqua !important; */
+        width: 100% !important;
+    }
+
 }

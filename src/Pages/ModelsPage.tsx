@@ -1,4 +1,6 @@
 import "../Pages/ModelsPage.css";
+
+
 import { ModelData } from "../ModelDatas";
 import { Stack, Box, Typography, Card, CardMedia, CardContent, Button, IconButton } from "@mui/material";
 
@@ -29,8 +31,9 @@ const ModelsPage = () => {
             </Typography>
 
             <Box
+                className='Model_Main_Box'
                 sx={{
-                    backgroundColor: "lightblu",
+                    backgroundColor: "lightblue",
                     display: "flex",
                     flexDirection: "column",
                     padding: "0 3rem 0",
@@ -43,18 +46,25 @@ const ModelsPage = () => {
                     <>
                         {index % 2 == 0 && (
                             <Card
+                                className="Model_card"
                                 style={{
                                     display: "flex",
                                     backgroundColor: "transparent",
                                     boxShadow: "none",
                                     width: "70%",
                                     height: "14rem",
+                                    
                                 }}
                             >
-                                <CardMedia component={"img"} height={"100%"} style={{ width: "200px" }} image={data.img} />
-                                <Stack sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                                    <CardContent>
+                                <CardMedia className="Model_card_Media" component={"img"} height={"100%"} style={{ width: "200px" }} image={data.img} />
+                                <Stack className="Model_card_stack" sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                                    <CardContent 
+                                className="Model_card_content"
+                                    
+                                    >
                                         <Typography
+                                className="Model_card1_content_P"
+
                                             variant="body2"
                                             color={"text.secondary"}
                                             width={"100%"}
@@ -71,6 +81,8 @@ const ModelsPage = () => {
                         )}
                         {index % 2 != 0 && (
                             <Card
+                            className="Model_card"
+
                                 style={{
                                     display: "flex",
                                     backgroundColor: "transparent",
@@ -80,9 +92,13 @@ const ModelsPage = () => {
                                     height: "14rem",
                                 }}
                             >
-                                <Stack sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                                    <CardContent>
+                                <Stack className="Model_card_stack" sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                                    <CardContent 
+                                        className="Model_card_content"
+                                    >
                                         <Typography
+                                        className="Model_card2_content_P"
+
                                             variant="body2"
                                             color={"text.secondary"}
                                             width={"100%"}
@@ -95,7 +111,7 @@ const ModelsPage = () => {
                                         </Typography>
                                     </CardContent>
                                 </Stack>
-                                <CardMedia component={"img"} height={"100%"} style={{ width: "200px" }} image={data.img} />
+                                <CardMedia className="Model_card_Media" component={"img"} height={"100%"} style={{ width: "200px" }} image={data.img} />
                             </Card>
                         )}
                     </>

@@ -1,23 +1,24 @@
+import './AboutPage.css'
+
 import { Stack, Box, Typography } from "@mui/material";
 import { FaRegRegistered } from "react-icons/fa";
 
-import './AboutPage.css'
 
 const AboutPage = () => {
     return (
-        <Stack alignItems={"center"}>
+        <Stack className='About_Main_Stack' alignItems={"center"} spacing={2}>
             <Typography variant="h4" sx={{ fontFamily: "Mina", fontWeight: "700", letterSpacing: ".3rem" }}>
                 ABOUT
             </Typography>
 
-            <Box sx={{backgroundColor:'aqu', height:'50vh'}}>
-                <Box className="" sx={{ display: "flex", justifyContent: "center    ", flexDirection: "row", alignItems:'center',backgroundColor:'re',
+            <Box className='About_Main_Box' sx={{backgroundColor:'aqu', height:'50vh'}}>
+                <Box className="About_Main_Box2" sx={{ display: "flex", justifyContent: "center    ", flexDirection: "row", alignItems:'center',backgroundColor:'re',
             height:'100%' }}>
-                    <Box className='logo_box' width={"50%"} sx={{ position: "relative" ,zIndex:'1', backgroundColor:'lightblu' ,height:'100%',display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'flex-start'}}>
+                    <Box className='About_logo_box' width={"50%"} sx={{ position: "relative" ,zIndex:'1', backgroundColor:'lightblu' ,height:'100%',display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'flex-start'}}>
 
-                        <Typography sx={{ fontSize: "4.5rem", fontFamily: "Marko one", fontWeight: "bold",  }}>
+                        <Typography className='logo_box_typo' sx={{ fontSize: "4.5rem", fontFamily: "Marko one", fontWeight: "bold",  }}>
                         <Box
-                            className="logo"
+                            className="R_logo"
                             fontSize={"2rem"}
                             sx={{
                                 display: "flex",
@@ -43,9 +44,9 @@ const AboutPage = () => {
                         </Typography>
                     </Box>
                     
-                    <Box sx={{width:'50%', height:'inherit', backgroundColor:'lightgoldenrodyello', display:'flex',
+                    <Box className='About_Box_content' sx={{width:'50%', height:'inherit', backgroundColor:'lightgoldenrodyello', display:'flex',
                 alignItems:'end',paddingBottom:'3rem'}}>
-                        <Typography sx={{fontSize:'25px', width:'80%', fontFamily:'Mina', fontWeight:'700'}}>
+                        <Typography className='About_Box_content_P' sx={{fontSize:'25px', width:'80%', fontFamily:'Mina', fontWeight:'700'}}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo inventore officia. Totam
                             voluptate, sunt fugiat tempore laborum beatae natus.
                         </Typography>

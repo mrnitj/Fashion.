@@ -60,7 +60,6 @@ const Home = () => {
                         backgroundColor: "lighgray",
                         display: "flex",
                         padding: "0",
-                        flexDirection: "",
                         alignItems: "center",
                         justifyContent: "space-between",
                     }}

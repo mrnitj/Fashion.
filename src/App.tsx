@@ -9,7 +9,7 @@ const App = () => {
     return (
     <>
 
-        <Stack spacing={6}>
+        <Stack sx={{backgroundColor:'lightpin'}} spacing={6}>
                 
             
             <Routes>
