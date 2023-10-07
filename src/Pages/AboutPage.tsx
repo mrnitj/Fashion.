@@ -6,8 +6,8 @@ import { FaRegRegistered } from "react-icons/fa";
 
 const AboutPage = () => {
     return (
-        <Stack className='About_Main_Stack' alignItems={"center"} spacing={2}>
-            <Typography variant="h4" sx={{ fontFamily: "Mina", fontWeight: "700", letterSpacing: ".3rem" }}>
+        <Stack  className='About_Main_Stack' alignItems={"center"} spacing={2}>
+            <Typography className='About_h' variant="h4" sx={{ fontFamily: "Mina", fontWeight: "700", letterSpacing: ".3rem" }}>
                 ABOUT
             </Typography>
 
@@ -32,6 +32,7 @@ const AboutPage = () => {
                         </Box>
                             fashion.
                         <Typography
+                            className='logo_box_typo_sub'
                             width={"100%"}
                             textAlign={"left"}
                             fontFamily={"inter"}

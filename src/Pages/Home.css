@@ -58,7 +58,7 @@ body{
 
 
 
-@media only screen and (max-width:920px){
+@media only screen and (max-width:990px){
 
     .Home_content{
         /* flex-direction: column; */
@@ -77,12 +77,12 @@ body{
         /* background-color: red; */
     }
     .Home_fashion{
-        font-size:4.4rem ;
+        font-size:4.3rem !important ;
         /* color: antiquewhite; */
         
     }
     .Home_subtitle{
-        font-size: .6rem;
+        font-size: .6rem !important;
         /* color: red; */
     } 
     .Home_Navbar{
@@ -90,23 +90,44 @@ body{
     }
     
     .Home_logo_R{
-        left: 220px;
-        top: 45px;
-        font-size: 1.8rem;
+        left: 215px !important;
+        top: 42px !important;
+        font-size: 1.9rem !important;
     }
-}
-    .hero_right{
-        /* background-color: blue; */
-        /* margin-right: 43rem; */
-    }
-    .hero_right_content{
-        /* margin-right: 100px;
-        margin-right: 43rem; */
+   
 
-    }
     .hero_right_content .one{
         font-size: 3.5rem;
     }
     .hero_right_content .two{
         font-size: .9rem;
     }
+}
+
+
+@media (max-width : 880px){
+
+    .Home_content_box{  
+        flex-direction: column;
+
+    }
+    .Home_fashion{
+        font-size: 4rem !important;
+    }
+    .Home_subtitle{
+        font-size: 0.5rem !important;
+    }
+    .Home_logo_R {
+        
+        left: 200px !important;
+        top:35px !important; 
+        font-size: 2rem !important;
+    }
+    .hero{
+        height: 50%;
+    }
+    .hero_right_content .one{
+        transform: none;
+    }
+
+}

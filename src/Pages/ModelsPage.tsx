@@ -57,13 +57,14 @@ const ModelsPage = () => {
                                 }}
                             >
                                 <CardMedia className="Model_card_Media" component={"img"} height={"100%"} style={{ width: "200px" }} image={data.img} />
+
                                 <Stack className="Model_card_stack" sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                                     <CardContent 
                                 className="Model_card_content"
                                     
                                     >
                                         <Typography
-                                className="Model_card1_content_P"
+                                className="Model_card_content_P"
 
                                             variant="body2"
                                             color={"text.secondary"}
@@ -97,7 +98,7 @@ const ModelsPage = () => {
                                         className="Model_card_content"
                                     >
                                         <Typography
-                                        className="Model_card2_content_P"
+                                        className="Model_card_content_P"
 
                                             variant="body2"
                                             color={"text.secondary"}
@@ -118,6 +119,7 @@ const ModelsPage = () => {
                 ))}
 
                 <Button
+                    className="About_btn_more"
                     onClick={moreHandler}
                     sx={{
                         display: "flex",
@@ -130,11 +132,11 @@ const ModelsPage = () => {
                     }}
                 >
                     More
-                    <ExpandMoreIcon sx={{ position: "relative", bottom: "20px", fontSize: "50px" }} />
+                    <ExpandMoreIcon className="About_btn_more_icon" sx={{ position: "relative", bottom: "20px", fontSize: "50px" }} />
                 </Button>
-                <Box sx={{ position: "absolute", bottom: "70px", right: "0px", display: vis }}>
-                    <IconButton size="large" onClick={resetHandler}>
-                        <ExpandLessIcon sx={{ fontSize: "3rem" }} />
+                <Box className='About_btn_less' sx={{ position: "absolute", bottom: "70px", right: "0px" ,display:vis }}>
+                    <IconButton className='About_ibtn_less' size="large" onClick={resetHandler}>
+                        <ExpandLessIcon className='About_btn_less_icon' sx={{ fontSize: "3rem" }} />
                     </IconButton>
                 </Box>
             </Box>

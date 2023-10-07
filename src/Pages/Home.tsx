@@ -65,6 +65,7 @@ const Home = () => {
                     }}
                 >
                     <Box className="Home_logo" sx={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
+                        
                         <Box width={"100%"} sx={{ position: "relative" }}>
                             <Box
                                 className="Home_logo_R"
