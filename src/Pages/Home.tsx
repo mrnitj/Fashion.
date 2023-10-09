@@ -27,7 +27,7 @@ const Home = () => {
                 <IconButton size="small" sx={{ fontFamily: "inherit" }}>
                     +1
                 </IconButton>
-                <Typography sx={{ display:'flex', alignItems:'center'}} fontFamily={"inherit"}>
+                <Typography className='HomeNavP' sx={{ display:'flex', alignItems:'center'}} fontFamily={"inherit"}>
                     LOOKBOOK{" "}
                     <span>
                         
@@ -37,9 +37,10 @@ const Home = () => {
                     </span>
                 </Typography>
                 <Box sx={{ display: "flex", width: "20rem", justifyContent: "space-between", alignItems: "center" }}>
-                    <Typography fontFamily={"inherit"}>SHOP</Typography>
-                    <Typography fontFamily={"inherit"}>SUBSCRIBE</Typography>
+                    <Typography className='HomeNavP' fontFamily={"inherit"}>SHOP</Typography>
+                    <Typography className='HomeNavP' fontFamily={"inherit"}>SUBSCRIBE</Typography>
                     <Typography
+                    className='HomeNavP'
                         sx={{
                             fontSize: "1rem",
                             fontFamily: "inherit",
