@@ -6,8 +6,9 @@ import { CiFacebook } from "react-icons/ci";
 
 const Footer = () => {
     return (
-        <Stack sx={{ backgroundColor: "#D9D9D9", height: "40vh", borderRadius: "20px", padding: "0 2rem 0" }}>
+        <Stack className='footerStack' sx={{ backgroundColor: "#D9D9D9", height: "40vh", borderRadius: "20px", padding: "0 2rem 0" }}>
             <Box
+                className='footerMainbox'
                 sx={{
                     backgroundColor: "lightblu",
                     height: "100%",
@@ -16,9 +17,11 @@ const Footer = () => {
                     color: "black",
                 }}
             >
-                <Box sx={{ backgroundColor: "aqu", height: "100%", width: "5rem", display: "flex" }}>
+                <Box className='footerLogobox' sx={{ backgroundColor: "aqu", height: "100%", width: "5rem", display: "flex" }}>
                     <Typography
+                            className='footerLogo'
                         sx={{
+
                             fontFamily: "Marko One",
                             fontSize: "1.2rem",
                             height: "100%",
@@ -32,7 +35,7 @@ const Footer = () => {
                         f a s h i o n .
                     </Typography>
                 </Box>
-                <Box
+                <Box className='footertext'
                     sx={{
                         backgroundColor: "re",
                         fontSize: "1rem",
@@ -43,20 +46,20 @@ const Footer = () => {
                         justifyContent: "center",
                     }}
                 >
-                    <Typography sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                    <Typography className='footertextP' sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
                         +xx xxxx xxxxx
                     </Typography>
-                    <Typography sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                    <Typography className='footertextP' sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
                         Lorem ipsum
                     </Typography>
-                    <Typography sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                    <Typography className='footertextP' sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
                         Lorem ipsum dolor
                     </Typography>
-                    <Typography sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                    <Typography className='footertextP' sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
                         Lorem ipsum dolor
                     </Typography>
                 </Box>
-                <Box
+                <Box className='footertext'
                     sx={{
                         backgroundColor: "blu",
                         fontSize: "1rem",
@@ -67,17 +70,17 @@ const Footer = () => {
                         justifyContent: "center",
                     }}
                 >
-                    <Typography sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                    <Typography className='footertextP' sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
                         Lorem ipsum
                     </Typography>
-                    <Typography sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                    <Typography className='footertextP' sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
                         Lorem ipsum dolor
                     </Typography>
-                    <Typography sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                    <Typography className='footertextP' sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
                         Lorem ipsum dolor
                     </Typography>
                 </Box>
-                <Box
+                <Box className='footertext'
                     sx={{
                         backgroundColor: "blu",
                         fontSize: "1rem",
@@ -88,17 +91,17 @@ const Footer = () => {
                         justifyContent: "center",
                     }}
                 >
-                    <Typography sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                    <Typography className='footertextP' sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
                         Lorem ipsum
                     </Typography>
-                    <Typography sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                    <Typography className='footertextP' sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
                         Lorem ipsum dolor
                     </Typography>
-                    <Typography sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                    <Typography className='footertextP' sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
                         Lorem ipsum dolor
                     </Typography>
                 </Box>
-                <Box
+                <Box className='footerIcons'
                     sx={{
                         backgroundColor: "viole",
                         fontSize: "1rem",
@@ -109,14 +112,14 @@ const Footer = () => {
                         justifyContent: "center",
                     }}
                 >
-                    <IconButton sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
-                        <CiMail style={{ fontSize: "50px" }} />
+                    <IconButton  sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                        <CiMail className='footerIcon' style={{ fontSize: "50px" }} />
                     </IconButton>
-                    <IconButton sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
-                        <CiFacebook style={{ fontSize: "50px" }} />
+                    <IconButton  sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                        <CiFacebook className='footerIcon' style={{ fontSize: "50px" }} />
                     </IconButton>
-                    <IconButton sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
-                        <CiInstagram style={{ fontSize: "50px" }} />
+                    <IconButton  sx={{ fontSize: "inherit", fontFamily: "inherit", fontWeight: "inherit" }}>
+                        <CiInstagram className='footerIcon' style={{ fontSize: "50px" }} />
                     </IconButton>
                 </Box>
             </Box>

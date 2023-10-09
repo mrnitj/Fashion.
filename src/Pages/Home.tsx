@@ -27,13 +27,13 @@ const Home = () => {
                 <IconButton size="small" sx={{ fontFamily: "inherit" }}>
                     +1
                 </IconButton>
-                <Typography sx={{}} fontFamily={"inherit"}>
+                <Typography sx={{ display:'flex', alignItems:'center'}} fontFamily={"inherit"}>
                     LOOKBOOK{" "}
                     <span>
-                        <IconButton>
+                        
                             {/* {" "} */}
                             <KeyboardArrowDownIcon fontSize="large" />
-                        </IconButton>
+                       
                     </span>
                 </Typography>
                 <Box sx={{ display: "flex", width: "20rem", justifyContent: "space-between", alignItems: "center" }}>

@@ -1,0 +1,47 @@
+@media (max-width:670px){
+
+
+    .footerLogobox{
+        width: 2rem !important;
+    }
+    .footerLogo{
+        font-size: 1rem !important;
+    }
+    .footertextP{
+        font-size: .7rem !important;
+    }
+    .footerIcon{
+        font-size: 30px !important;
+    }
+}
+
+@media (max-width:582px){
+
+    .footerStack{
+        height:70vh !important;
+      text-align: center;
+    }
+
+    .footerMainbox{
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .footerLogobox{
+        width: 100% !important;
+    border-bottom: 1px solid grey !important;
+    height: 20% !important;
+    
+    justify-content: center !important;
+    }
+    .footerLogo{
+        width: 6rem !important;
+
+    }
+    .footertext{
+        border-bottom: 1px solid grey;
+    }
+    .footerIcons{
+        flex-direction: row !important;
+    }
+
+}
