@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Mina:wght@400;700&display=swap');
+
+@media (max-width:1050px){
+
+    .SigninMainStack{
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        height: 100vh !important;
+        
+    }
+    
+    .SigninImgBox {
+        
+        background-color: red !important;
+        /* display: flex;
+        justify-content: center; */
+        display: none !important;
+    }
+  
+
+    .SigninImgBox img {
+        display: none;
+        /* height: 100% !important; */
+       
+    }
+    
+    .SigninSecondStack{
+        padding: 0 !important;
+    }
+    .SigninInputStack {
+       display: none;
+    }
+    .SigninImgBox{
+       display: none;
+        
+    }
+    .LoginInputStack {
+        
+        
+        background-repeat: no-repeat;   
+        background-position: center;
+        
+        background-size: contain;
+        height: 100% !important;
+        width: 100% !important;
+        
+        /* height: 100%; */
+        /* background-color: red; */
+    }
+    .LoginImgBox{
+        display: block !important;
+        background-image: url('../Assets/Signup.png');
+        background-position: center !important;
+        height: 100% !important;
+        
+    }
+    .SigninInputStack{
+        width: 100% !important;
+    }
+    .SigninSecondStack{
+        padding: 10rem !important;
+    }
+}

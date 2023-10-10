@@ -33,7 +33,7 @@ const ModelsPage = () => {
             <Box
                 className='Model_Main_Box'
                 sx={{
-                    backgroundColor: "lightblue",
+                    backgroundColor: "lightblu",
                     display: "flex",
                     flexDirection: "column",
                     padding: "0 3rem 0",

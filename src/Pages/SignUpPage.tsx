@@ -1,10 +1,14 @@
-import './SignUpPage.css'
+import "./SignUpPage.css";
 import { Stack, Box, TextField, FormLabel, Button, Typography } from "@mui/material";
 
 const SignUpPage = () => {
     return (
-        <Stack sx={{ height: "100vh", display: "flex", flexDirection: "row", backgroundColor: "r" }}>
+        <Stack
+            className="SigninMainStack"
+            sx={{ height: "100vh", display: "flex", flexDirection: "row", backgroundColor: "r" }}
+        >
             <Box
+                className="SigninImgBox"
                 sx={{
                     height: "100%",
                     width: "100%",
@@ -18,7 +22,7 @@ const SignUpPage = () => {
                 <img src="src/Assets/signup.png" alt="" style={{}} />
             </Box>
             <Stack
-                spacing={2}
+                className="SigninSecondStack"
                 sx={{
                     display: "flex",
                     flexDirection: "column",
@@ -28,9 +32,22 @@ const SignUpPage = () => {
                     fontFamily: "Mina",
                 }}
             >
-                <>
-                    <FormLabel sx={{ fontFamily: "Mina" }}>Email</FormLabel>
-                    <TextField
+                <Stack
+                    className="SigninInputStack"
+
+                    spacing={2}
+                    sx={{
+                        backgroundColor: "lightblu",
+                        width: "70%",
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "50%",
+                    }}
+                >
+                    <FormLabel className="SigninLabels" sx={{ fontFamily: "Mina" }}>Email</FormLabel>
+                    <TextField 
+                            className="SigninTextfield"
+
                         variant="standard"
                         placeholder="name"
                         InputProps={{
@@ -46,15 +63,17 @@ const SignUpPage = () => {
                             fontFamily: "Mina",
                         }}
                     ></TextField>
-                    <FormLabel sx={{ fontFamily: "Mina" }}>Email</FormLabel>
-                    <TextField
+                    <FormLabel className="SigninLabels" sx={{ fontFamily: "Mina" }}>Email</FormLabel>
+                    <TextField 
+                            className="SigninTextfield"
+
                         type="email"
                         variant="standard"
                         placeholder="email"
                         InputProps={{
                             disableUnderline: true,
                         }}
-                        inputProps={{ style: { border: 'none', outline: 'none' } }}
+                        inputProps={{ style: { border: "none", outline: "none" } }}
                         sx={{
                             backgroundColor: "white",
                             height: "2.5rem",
@@ -65,8 +84,10 @@ const SignUpPage = () => {
                             fontFamily: "Mina",
                         }}
                     ></TextField>
-                    <FormLabel sx={{ fontFamily: "Mina" }}>Password</FormLabel>
-                    <TextField
+                    <FormLabel className="SigninLabels" sx={{ fontFamily: "Mina" }}>Password</FormLabel>
+                    <TextField 
+                            className="SigninTextfield"
+
                         type="password"
                         size={"small"}
                         variant="standard"
@@ -101,8 +122,27 @@ const SignUpPage = () => {
                         don’t have an account{" "}
                         <span style={{ color: "blue", fontWeight: "700", cursor: "pointer" }}>Login</span>
                     </Typography>
-                </>
+                </Stack>
             </Stack>
+
+           
+            <Box
+                className="LoginImgBox"
+                sx={{
+                    
+                    height: "100%",
+                    width: "100%",
+                    backgroundSize: "contain",
+                    backgroundRepeat: "no-repeat",
+                    flex: "1",
+                    // display: "flex",
+                    alignItems: "flex-end",
+                    display:'none'
+                }}
+            >
+               
+            </Box>
+
         </Stack>
     );
 };

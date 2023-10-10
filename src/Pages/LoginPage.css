@@ -1,1 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Mina:wght@400;700&display=swap');
+
+@media (max-width:990px){
+
+    .LoginMainStack{
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        
+    }
+    
+    .LoginImgBox {
+        
+        /* background-color: red !important; */
+        display: flex;
+        justify-content: center;
+    }
+
+    .LoginImgBox img {
+        display: none;
+        /* height: 100% !important; */
+       
+    }
+    .LoginSecondStack{
+        padding: 0 !important;
+    }
+    .LoginInputStack {
+        /* background-color: lightcoral; */
+        /* background-image: url('../Assets/Login.png'); */
+        background-repeat: no-repeat;   
+        background-position: center;
+        /* object-fit: cover; */
+        background-size: contain;
+        height: 100% !important;
+        width: 100% !important;
+        
+        /* height: 100%; */
+        /* background-color: red; */
+    }
+    .LoginImgBox{
+        /* display: none !important; */
+        background-image: url('../Assets/Login.png');
+        background-position: center;
+        
+    }
+}
