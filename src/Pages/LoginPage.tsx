@@ -2,13 +2,28 @@ import "./LoginPage.css";
 import { useNavigate } from "react-router-dom";
 
 import { Stack, Box, TextField, Typography, Button, FormLabel } from "@mui/material";
+import { FaRegRegistered } from "react-icons/fa";
 
 const LoginPage = () => {
-
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     return (
-        <Stack  className="LoginMainStack" sx={{ height: "100vh", display: "flex", flexDirection: "row" }}>
+        <Stack className="LoginMainStack" sx={{ height: "100vh", display: "flex", flexDirection: "row" }}>
+            <Box>
+                <Typography
+                    onClick={() => navigate("/")}
+                    sx={{
+                        fontFamily: "Marko one",
+                        fontSize: "3rem",
+                        position: "relative",
+                        fontWeight: "700",
+                        cursor: "pointer",
+                    }}
+                >
+                    fashion.
+                    <FaRegRegistered style={{ position: "absolute", top: "9", right: "-5", fontSize: "25px" }} />
+                </Typography>
+            </Box>
             <Stack
                 className="LoginSecondStack"
                 // spacing={2}
@@ -91,7 +106,12 @@ const LoginPage = () => {
                     </Button>
                     <Typography sx={{ letterSpacing: "2px", fontFamily: "Mina" }}>
                         don’t have an account{" "}
-                        <span style={{ color: "blue", fontWeight: "700", cursor: "pointer" }} onClick={()=> navigate('/signup')}>Sign up</span>
+                        <span
+                            style={{ color: "blue", fontWeight: "700", cursor: "pointer" }}
+                            onClick={() => navigate("/signup")}
+                        >
+                            Sign up
+                        </span>
                     </Typography>
                 </Stack>
             </Stack>

@@ -1,48 +1,42 @@
 .R_logo::before {
-    content: '';
+    content: "";
     height: 130px;
     width: 175px;
     background-color: #d9d9d9;
     position: absolute; /* Position it absolutely within the parent */
     left: -190px; /* Adjust the position */
-    top:0px;
-    
+    top: 0px;
+
     z-index: -1; /* Set a lower z-index to place it behind */
 
-    border-radius:20px;
+    border-radius: 20px;
 }
 
-
-@media only screen and (max-width:990px){
-
-    
-
-    .About_Box_content_P{
+@media only screen and (max-width: 990px) {
+    .About_Box_content_P {
         /* background-color: aqua !important; */
         width: 100% !important;
     }
-
 }
-@media (max-width : 880px){
-    .About_Box_content_P{
+@media (max-width: 880px) {
+    .About_Box_content_P {
         font-size: 15px !important;
     }
-    .logo_box_typo{
+    .logo_box_typo {
         font-size: 3.5rem !important;
     }
-    .logo_box_typo_sub{
+    .logo_box_typo_sub {
         font-size: 0.4rem !important;
     }
-    .R_logo{
+    .R_logo {
         font-size: 1.5rem !important;
-        left:170px !important;
+        left: 170px !important;
         top: 30px !important;
     }
-    .R_logo::before{
+    .R_logo::before {
         left: -150px !important; /* Adjust the position */
-        top:0px !important;
+        top: 0px !important;
         height: 110px !important;
         width: 140px !important;
-
     }
 }

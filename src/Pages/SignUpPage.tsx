@@ -1,18 +1,31 @@
 import "./SignUpPage.css";
 import { Stack, Box, TextField, FormLabel, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
-
+import { FaRegRegistered } from "react-icons/fa";
 
 const SignUpPage = () => {
-
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     return (
         <Stack
             className="SigninMainStack"
             sx={{ height: "100vh", display: "flex", flexDirection: "row", backgroundColor: "r" }}
         >
+            <Box>
+                <Typography
+                    onClick={() => navigate("/")}
+                    sx={{
+                        fontFamily: "Marko one",
+                        fontSize: "3rem",
+                        position: "relative",
+                        fontWeight: "700",
+                        cursor: "pointer",
+                    }}
+                >
+                    fashion.
+                    <FaRegRegistered style={{ position: "absolute", top: "9", right: "-5", fontSize: "25px" }} />
+                </Typography>
+            </Box>
             <Box
                 className="SigninImgBox"
                 sx={{
@@ -34,13 +47,12 @@ const SignUpPage = () => {
                     flexDirection: "column",
                     flex: "1",
                     justifyContent: "center",
-                    padding: "0 13rem 0",
+                    padding: "0 0rem 0",
                     fontFamily: "Mina",
                 }}
             >
                 <Stack
                     className="SigninInputStack"
-
                     spacing={2}
                     sx={{
                         backgroundColor: "lightblu",
@@ -50,10 +62,11 @@ const SignUpPage = () => {
                         height: "50%",
                     }}
                 >
-                    <FormLabel className="SigninLabels" sx={{ fontFamily: "Mina" }}>Email</FormLabel>
-                    <TextField 
-                            className="SigninTextfield"
-
+                    <FormLabel className="SigninLabels" sx={{ fontFamily: "Mina" }}>
+                        Email
+                    </FormLabel>
+                    <TextField
+                        className="SigninTextfield"
                         variant="standard"
                         placeholder="name"
                         InputProps={{
@@ -69,10 +82,11 @@ const SignUpPage = () => {
                             fontFamily: "Mina",
                         }}
                     ></TextField>
-                    <FormLabel className="SigninLabels" sx={{ fontFamily: "Mina" }}>Email</FormLabel>
-                    <TextField 
-                            className="SigninTextfield"
-
+                    <FormLabel className="SigninLabels" sx={{ fontFamily: "Mina" }}>
+                        Email
+                    </FormLabel>
+                    <TextField
+                        className="SigninTextfield"
                         type="email"
                         variant="standard"
                         placeholder="email"
@@ -90,10 +104,11 @@ const SignUpPage = () => {
                             fontFamily: "Mina",
                         }}
                     ></TextField>
-                    <FormLabel className="SigninLabels" sx={{ fontFamily: "Mina" }}>Password</FormLabel>
-                    <TextField 
-                            className="SigninTextfield"
-
+                    <FormLabel className="SigninLabels" sx={{ fontFamily: "Mina" }}>
+                        Password
+                    </FormLabel>
+                    <TextField
+                        className="SigninTextfield"
                         type="password"
                         size={"small"}
                         variant="standard"
@@ -126,22 +141,17 @@ const SignUpPage = () => {
                     </Button>
                     <Typography sx={{ letterSpacing: "2px", fontFamily: "Mina" }}>
                         don’t have an account{" "}
-                        <span style={{ color: "blue", fontWeight: "700", cursor: "pointer" }} onClick={()=> navigate('/login')}>Login</span>
+                        <span
+                            style={{ color: "blue", fontWeight: "700", cursor: "pointer" }}
+                            onClick={() => navigate("/login")}
+                        >
+                            Login
+                        </span>
                     </Typography>
                 </Stack>
             </Stack>
 
-           
-            <Box
-                className="SigninImgBox2"
-                sx={{
-                    
-                   
-                }}
-            >
-               
-            </Box>
-
+            <Box className="SigninImgBox2" sx={{}}></Box>
         </Stack>
     );
 };
