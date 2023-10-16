@@ -2,12 +2,12 @@ import './Home.css'
 
 import { Stack, Box, IconButton, Typography } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 import { FaRegRegistered } from "react-icons/fa";
 import ModelsPage from "./ModelsPage";
 import AboutPage from "./AboutPage";
 import Footer from "./Footer";
+import HamburgerBar from '../Components/HamburgerBar';
 
 const Home = () => {
     return (
@@ -49,7 +49,7 @@ const Home = () => {
                             verticalAlign: "center",
                         }}
                     >
-                        <MoreHorizIcon sx={{ fontSize: "3rem", letterSpacing: "1rem" }} />
+                        <HamburgerBar/>
                     </Typography>
                 </Box>
             </Box>

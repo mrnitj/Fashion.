@@ -1,8 +1,12 @@
 import "./LoginPage.css";
+import { useNavigate } from "react-router-dom";
 
 import { Stack, Box, TextField, Typography, Button, FormLabel } from "@mui/material";
 
 const LoginPage = () => {
+
+    const navigate = useNavigate()
+
     return (
         <Stack  className="LoginMainStack" sx={{ height: "100vh", display: "flex", flexDirection: "row" }}>
             <Stack
@@ -87,7 +91,7 @@ const LoginPage = () => {
                     </Button>
                     <Typography sx={{ letterSpacing: "2px", fontFamily: "Mina" }}>
                         don’t have an account{" "}
-                        <span style={{ color: "blue", fontWeight: "700", cursor: "pointer" }}>Sign up</span>
+                        <span style={{ color: "blue", fontWeight: "700", cursor: "pointer" }} onClick={()=> navigate('/signup')}>Sign up</span>
                     </Typography>
                 </Stack>
             </Stack>

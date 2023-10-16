@@ -9,6 +9,11 @@
         height: 100vh !important;
         
     }
+    .SigninSecondStack{
+        padding: 10rem !important;
+        height: 50% !important;
+    }
+   
     
     .SigninImgBox {
         
@@ -48,17 +53,16 @@
         /* height: 100%; */
         /* background-color: red; */
     }
-    .LoginImgBox{
+    .SigninImgBox2{
         display: block !important;
         background-image: url('../Assets/Signup.png');
         background-position: center !important;
         height: 100% !important;
-        
+        width:100% !important;
+        background-repeat: no-repeat;
     }
     .SigninInputStack{
         width: 100% !important;
     }
-    .SigninSecondStack{
-        padding: 10rem !important;
-    }
+    
 }

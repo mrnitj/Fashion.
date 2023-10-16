@@ -1,7 +1,13 @@
 import "./SignUpPage.css";
 import { Stack, Box, TextField, FormLabel, Button, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+
+
 
 const SignUpPage = () => {
+
+    const navigate = useNavigate()
+
     return (
         <Stack
             className="SigninMainStack"
@@ -120,24 +126,17 @@ const SignUpPage = () => {
                     </Button>
                     <Typography sx={{ letterSpacing: "2px", fontFamily: "Mina" }}>
                         don’t have an account{" "}
-                        <span style={{ color: "blue", fontWeight: "700", cursor: "pointer" }}>Login</span>
+                        <span style={{ color: "blue", fontWeight: "700", cursor: "pointer" }} onClick={()=> navigate('/login')}>Login</span>
                     </Typography>
                 </Stack>
             </Stack>
 
            
             <Box
-                className="LoginImgBox"
+                className="SigninImgBox2"
                 sx={{
                     
-                    height: "100%",
-                    width: "100%",
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
-                    flex: "1",
-                    // display: "flex",
-                    alignItems: "flex-end",
-                    display:'none'
+                   
                 }}
             >
                
