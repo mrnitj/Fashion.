@@ -1,4 +1,4 @@
-import "../Pages/ModelsPage.css";
+import "../Styles/ModelsPage.css";
 
 
 import { ModelData } from "../ModelDatas";

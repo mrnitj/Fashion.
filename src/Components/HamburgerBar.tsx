@@ -33,7 +33,16 @@ export default function HamburgerBar() {
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
                 onClick={handleClick}
-                sx={{ color: "black", "&:hover": { backgroundColor: "transparent" } }}
+                sx={{
+                    color: "black",
+                    transition: "scale 0.15s, color 0.15s",
+                    "&:hover": {
+                        backgroundColor: "transparent",
+                        color: "grey",
+                        scale: "1.5",
+                        transition: "scale 0.15s, color 0.15s",
+                    },
+                }}
                 disableRipple
             >
                 <MoreHorizIcon sx={{ fontSize: "3rem", letterSpacing: "1rem" }} />

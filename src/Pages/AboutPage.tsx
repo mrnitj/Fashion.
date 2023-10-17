@@ -1,4 +1,4 @@
-import "./AboutPage.css";
+import "../Styles/AboutPage.css";
 
 import { Stack, Box, Typography } from "@mui/material";
 import { FaRegRegistered } from "react-icons/fa";

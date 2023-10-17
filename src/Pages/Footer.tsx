@@ -1,4 +1,4 @@
-import "./Footer.css";
+import "../Styles/Footer.css";
 import { Stack, Box, Typography, IconButton } from "@mui/material";
 import { CiMail } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";

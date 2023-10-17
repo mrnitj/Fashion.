@@ -1,4 +1,4 @@
-import "./LoginPage.css";
+import "../Styles/LoginPage.css";
 import { useNavigate } from "react-router-dom";
 
 import { Stack, Box, TextField, Typography, Button, FormLabel } from "@mui/material";

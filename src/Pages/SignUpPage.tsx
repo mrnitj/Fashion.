@@ -1,4 +1,4 @@
-import "./SignUpPage.css";
+import "../Styles/SignUpPage.css";
 import { Stack, Box, TextField, FormLabel, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { FaRegRegistered } from "react-icons/fa";

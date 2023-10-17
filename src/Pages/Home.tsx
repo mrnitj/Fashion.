@@ -1,4 +1,4 @@
-import "./Home.css";
+import "../Styles/Home.css";
 
 import { Stack, Box, IconButton, Typography } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -8,8 +8,11 @@ import ModelsPage from "./ModelsPage";
 import AboutPage from "./AboutPage";
 import Footer from "./Footer";
 import HamburgerBar from "../Components/HamburgerBar";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const navigate = useNavigate();
+
     return (
         <>
             <Stack direction={"column"}>
@@ -27,7 +30,22 @@ const Home = () => {
                     <IconButton size="small" sx={{ fontFamily: "inherit" }}>
                         +1
                     </IconButton>
-                    <Typography className="HomeNavP" sx={{ display: "flex", alignItems: "center" }} fontFamily={"inherit"}>
+                    <Typography
+                        className="HomeNavP"
+                        sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            cursor: "pointer",
+                            transition: "scale 0.15s, color 0.15s",
+
+                            "&:hover": {
+                                color: "grey",
+                                scale: "1.1",
+                                transition: "scale 0.15s, color 0.15s",
+                            },
+                        }}
+                        fontFamily={"inherit"}
+                    >
                         LOOKBOOK{" "}
                         <span>
                             {/* {" "} */}
@@ -35,10 +53,36 @@ const Home = () => {
                         </span>
                     </Typography>
                     <Box sx={{ display: "flex", width: "20rem", justifyContent: "space-between", alignItems: "center" }}>
-                        <Typography className="HomeNavP" fontFamily={"inherit"}>
+                        <Typography
+                            onClick={() => navigate("/shop")}
+                            className="HomeNavP"
+                            fontFamily={"inherit"}
+                            sx={{
+                                cursor: "pointer",
+                                transition: "scale 0.15s, color 0.15s",
+                                "&:hover": {
+                                    color: "grey",
+                                    scale: "1.1",
+                                    transition: "scale 0.15s, color 0.15s",
+                                },
+                            }}
+                        >
                             SHOP
                         </Typography>
-                        <Typography className="HomeNavP" fontFamily={"inherit"}>
+                        <Typography
+                            className="HomeNavP"
+                            fontFamily={"inherit"}
+                            sx={{
+                                cursor: "pointer",
+                                transition: "scale 0.15s, color 0.15s",
+
+                                "&:hover": {
+                                    color: "grey",
+                                    scale: "1.1",
+                                    transition: "scale 0.15s, color 0.15s",
+                                },
+                            }}
+                        >
                             SUBSCRIBE
                         </Typography>
                         <Typography
