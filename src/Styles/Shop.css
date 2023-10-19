@@ -1,26 +1,29 @@
-.ShopMainStack{
-    height: 100vh;
-    /* background-color: rgb(164, 145, 145); */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Mina:wght@400;700&display=swap");
 
+
+
+.ShopMainStack {
+    height: auto;
+    /* background-color: rgb(164, 145, 145); */
 }
-.ShopMainBox{
+.ShopMainBox {
     /* background-color: aqua; */
 }
 
-.cardmedia image{
-    height:100px
-}
+/* .Shopcardmedia image {
+    height: 100px;
+} */
 
-li{
+li {
     list-style: none;
-    font-size: .5rem;
+    font-size: .7rem;
 }
-ul{
+ul {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #757575;
     padding: 0;
-    width: 4rem;
+    width: 6rem;
     color: white;
 }
