@@ -1,337 +1,444 @@
 import "../Styles/Shop.css";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import HamburgerBar from "../Components/HamburgerBar";
+import { useNavigate } from "react-router-dom";
+import { FaRegRegistered } from "react-icons/fa";
+
+import { CiMail } from "react-icons/ci";
+import { CiInstagram } from "react-icons/ci";
+import { CiFacebook } from "react-icons/ci";
+
 import {
     Stack,
     Box,
     Typography,
-    Button,
     Card,
     CardContent,
     CardMedia,
-    CardActions,
     IconButton,
     Checkbox,
-    FormGroup,
     FormControlLabel,
 } from "@mui/material";
-import Footer from "./Footer";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const Shop = () => {
+    const navigate = useNavigate();
+
     return (
-        <Stack className="ShopMainStack" sx={{height:'200vh'}} spacing={6} >
-            <Typography variant="h3" component={"div"} sx={{ fontFamily: "Mina", fontWeight: "700" }}>
-                Shop Here....
-            </Typography>
-            <Stack className="sidebarStack" direction={"row"} spacing={6} sx={{height:'100%', padding:'0 5rem'}}>
-                <Box className="sidebarBox" sx={{ height:"100%",backgroundColor:'red'}}>
-                <Box className='checkboxes' sx={{backgroundColor: "aqua",display:"flex",
-            flexDirection:"column", gap:'3em', height:'auto', width:'auto',position:'sticky', top:'0'}}>
-                    <Box sx={{ backgroundColor: "green", height: "auto" }}>
-                        <Typography sx={{ fontFamily: "Mina" }}>FILTER</Typography>
-
-                        <Box sx={{height:"auto", display:'flex',width:'200px' ,flexDirection:'column', padding:'1rem 0 0 2rem '}}>
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        sx={{
-                                            padding:'0',
-                                            color: "grey",
-                                            "&.Mui-checked": {
-                                                color: "black",
-                                            },
-                                        }}
-                                    />
-                                }
-                                label="Black"
-                                sx={{
-                                    // height:'22px',
-                                    
-                                    "& .MuiTypography-root": {
-                                        fontFamily: "Mina",
-                                        fontSize:"14px"
-
-                                        
-                                    },
-                                }}
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        sx={{
-                                            padding:'0',
-                                            
-                                            color: "grey",
-                                            "&.Mui-checked": {
-                                                color: "blue",
-                                            },
-                                        }}
-                                    />
-                                }
-                                label="Blue"
-                                sx={{
-                                    // height:'22px',
-                                    "& .MuiTypography-root": {
-                                        fontFamily: "Mina",
-                                        fontSize:"14px"
-                                        
-                                    },
-                                }}
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        sx={{
-                                            padding:'0',
-                                            
-                                            color: "grey",
-                                            "&.Mui-checked": {
-                                                color: "grey",
-                                            },
-                                        }}
-                                    />
-                                }
-                                label="Grey"
-                                sx={{
-                                    // height:'22px',
-                                    "& .MuiTypography-root": {
-                                        fontFamily: "Mina",
-                                        fontSize:"14px"
-                                        
-                                    },
-                                }}
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        sx={{
-                                            padding:'0',
-                                            
-                                            color: "grey",
-                                            "&.Mui-checked": {
-                                                color: "green",
-                                            },
-                                        }}
-                                    />
-                                }
-                                label="Green"
-                                sx={{
-                                    // height:'22px',
-                                    "& .MuiTypography-root": {
-                                        fontFamily: "Mina",
-                                        fontSize:"14px"
-                                        
-                                    },
-                                }}
-                            />
-                            
-                           
+        <Stack className="ShopMainStack" sx={{ height: "200vh" }} spacing={6}>
+            <Box
+                className="Shop_Navbar"
+                sx={{
+                    backgroundColor: "lightblu",
+                    height: "3rem",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    fontFamily: "inter",
+                }}
+            >
+                <Box
+                    className="Shop_logo"
+                    sx={{ display: "flex", justifyContent: "center", flexDirection: "column", paddin: "0" }}
+                >
+                    <Box width={"100%"} sx={{}}>
+                        <Box
+                            className="Shop_logo_R"
+                            fontSize={"1.5rem"}
+                            sx={{
+                                display: "flex",
+                                alignItems: "center",
+                                position: "relative",
+                                left: "145px",
+                                top: "30px",
+                            }}
+                        >
+                            <FaRegRegistered />
                         </Box>
+                        <Typography
+                            onClick={() => navigate("/")}
+                            className="Home_fashion"
+                            sx={{
+                                fontSize: "3rem",
+                                fontFamily: "Marko one",
+                                fontWeight: "bold",
+                                cursor: "pointer",
+                                padding: "0",
+                            }}
+                        >
+                            fashion.
+                        </Typography>
                     </Box>
-                    <Box className='reating' sx={{ backgroundColor: "violet", height: "auto", width:'100%' }}>
-                        <Typography sx={{ fontFamily: "Mina" }}>RATING</Typography>
+                </Box>
 
-                        <Box sx={{height:"auto", display:'flex', flexDirection:'column', width:'100% !important', padding:'1rem 0 0 2rem '}}>
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        sx={{
-                                            padding:'0',
-                                            color: "grey",
-                                            "&.Mui-checked": {
-                                                color: "grey",
-                                            },
-                                        }}
-                                    />
-                                }
-                                label="4★ & above"
-                                sx={{
-                                    // height:'22px',
-                                    
-                                    "& .MuiTypography-root": {
-                                        fontFamily: "Mina",
-                                        fontSize:"14px"
+                <Box
+                    sx={{
+                        display: "flex",
+                        width: "auto",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        gap: "3rem",
+                    }}
+                >
+                    <Typography
+                        className="HomeNavP"
+                        fontFamily={"inherit"}
+                        sx={{
+                            cursor: "pointer",
+                            transition: "scale 0.15s, color 0.15s",
 
-                                        
-                                    },
-                                }}
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
+                            "&:hover": {
+                                color: "grey",
+                                scale: "1.1",
+                                transition: "scale 0.15s, color 0.15s",
+                            },
+                        }}
+                    >
+                        CART
+                    </Typography>
+                    <Typography
+                        className="HomeNavP"
+                        sx={{
+                            fontSize: "1rem",
+                            fontFamily: "inherit",
+                            letterSpacing: "1rem",
+                            height: "100%",
+                            verticalAlign: "center",
+                        }}
+                    >
+                        <HamburgerBar />
+                    </Typography>
+                </Box>
+            </Box>
+
+            {/* ----------------------- */}
+
+            <Stack
+                className="shopContent"
+                direction={"row"}
+                spacing={6}
+                sx={{ height: "100%", padding: "0 5rem", backgroundColor: "blu" }}
+            >
+                <Box className="sidebarBox" sx={{backgroundColor: "re", padding: "0", height:'auto'}}>
+                    <Box
+                        className="sidebar_content"
+                        sx={{
+                            backgroundColor: "aqu",
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "space-between",
+                            height: "auto",
+                            width: "auto",
+                            position: "sticky",
+                            top: "0",
+                            padding: "0",
+                        }}
+                    >
+                        <Box
+                            className="checkboxes"
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "3rem",
+                            }}
+                        >
+                            <Box sx={{ backgroundColor: "gree", height: "auto" }}>
+                                <Typography sx={{ fontFamily: "Mina" }}>FILTER</Typography>
+
+                                <Box
+                                    sx={{
+                                        height: "auto",
+                                        display: "flex",
+                                        width: "200px",
+                                        flexDirection: "column",
+                                        padding: "1rem 0 0 2rem ",
+                                    }}
+                                >
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    padding: "0",
+                                                    color: "grey",
+                                                    "&.Mui-checked": {
+                                                        color: "black",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label="Black"
                                         sx={{
-                                            padding:'0',
-                                            
-                                            color: "grey",
-                                            "&.Mui-checked": {
-                                                color: "grey",
+                                            // height:'22px',
+
+                                            "& .MuiTypography-root": {
+                                                fontFamily: "Mina",
+                                                fontSize: "14px",
                                             },
                                         }}
                                     />
-                                }
-                                label="3★ & above"
-                                sx={{
-                                    // height:'22px',
-                                    "& .MuiTypography-root": {
-                                        fontFamily: "Mina",
-                                        fontSize:"14px"
-                                        
-                                    },
-                                }}
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    padding: "0",
+
+                                                    color: "grey",
+                                                    "&.Mui-checked": {
+                                                        color: "blue",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label="Blue"
                                         sx={{
-                                            padding:'0',
-                                            
-                                            color: "grey",
-                                            "&.Mui-checked": {
-                                                color: "grey",
+                                            // height:'22px',
+                                            "& .MuiTypography-root": {
+                                                fontFamily: "Mina",
+                                                fontSize: "14px",
                                             },
                                         }}
                                     />
-                                }
-                                label="2★ & above"
-                                sx={{
-                                    // height:'22px',
-                                    "& .MuiTypography-root": {
-                                        fontFamily: "Mina",
-                                        fontSize:"14px"
-                                        
-                                    },
-                                }}
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    padding: "0",
+                                                    color: "grey",
+                                                    "&.Mui-checked": {
+                                                        color: "grey",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label="Grey"
                                         sx={{
-                                            padding:'0',
-                                            
-                                            color: "grey",
-                                            "&.Mui-checked": {
-                                                color: "grey",
+                                            "& .MuiTypography-root": {
+                                                fontFamily: "Mina",
+                                                fontSize: "14px",
                                             },
                                         }}
                                     />
-                                }
-                                label="1★ & above"
-                                sx={{
-                                    // height:'22px',
-                                    "& .MuiTypography-root": {
-                                        fontFamily: "Mina",
-                                        fontSize:"14px"
-                                        
-                                    },
-                                }}
-                            />
-                            
-                           
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    padding: "0",
+
+                                                    color: "grey",
+                                                    "&.Mui-checked": {
+                                                        color: "green",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label="Green"
+                                        sx={{
+                                            "& .MuiTypography-root": {
+                                                fontFamily: "Mina",
+                                                fontSize: "14px",
+                                            },
+                                        }}
+                                    />
+                                </Box>
+                            </Box>
+                            <Box className="reating" sx={{ backgroundColor: "viole", height: "auto", width: "100%" }}>
+                                <Typography sx={{ fontFamily: "Mina" }}>RATING</Typography>
+
+                                <Box
+                                    sx={{
+                                        height: "auto",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        width: "100% !important",
+                                        padding: "1rem 0 0 2rem ",
+                                    }}
+                                >
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    padding: "0",
+                                                    color: "grey",
+                                                    "&.Mui-checked": {
+                                                        color: "grey",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label="4★ & above"
+                                        sx={{
+
+                                            "& .MuiTypography-root": {
+                                                fontFamily: "Mina",
+                                                fontSize: "14px",
+                                            },
+                                        }}
+                                    />
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    padding: "0",
+
+                                                    color: "grey",
+                                                    "&.Mui-checked": {
+                                                        color: "grey",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label="3★ & above"
+                                        sx={{
+                                            "& .MuiTypography-root": {
+                                                fontFamily: "Mina",
+                                                fontSize: "14px",
+                                            },
+                                        }}
+                                    />
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    padding: "0",
+
+                                                    color: "grey",
+                                                    "&.Mui-checked": {
+                                                        color: "grey",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label="2★ & above"
+                                        sx={{
+                                            "& .MuiTypography-root": {
+                                                fontFamily: "Mina",
+                                                fontSize: "14px",
+                                            },
+                                        }}
+                                    />
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    padding: "0",
+
+                                                    color: "grey",
+                                                    "&.Mui-checked": {
+                                                        color: "grey",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label="1★ & above"
+                                        sx={{
+                                            "& .MuiTypography-root": {
+                                                fontFamily: "Mina",
+                                                fontSize: "14px",
+                                            },
+                                        }}
+                                    />
+                                </Box>
+                            </Box>
+                            <Box className="reating" sx={{ backgroundColor: "viole", height: "auto", width: "100%" }}>
+                                <Typography sx={{ fontFamily: "Mina" }}>OFFERS</Typography>
+
+                                <Box
+                                    sx={{
+                                        height: "auto",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        width: "100% !important",
+                                        padding: "1rem 0 0 2rem ",
+                                    }}
+                                >
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    padding: "0",
+                                                    color: "grey",
+                                                    "&.Mui-checked": {
+                                                        color: "grey",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label="30% or more"
+                                        sx={{
+                                            "& .MuiTypography-root": {
+                                                fontFamily: "Mina",
+                                                fontSize: "14px",
+                                            },
+                                        }}
+                                    />
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    padding: "0",
+
+                                                    color: "grey",
+                                                    "&.Mui-checked": {
+                                                        color: "grey",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label="40% or more"
+                                        sx={{
+                                            "& .MuiTypography-root": {
+                                                fontFamily: "Mina",
+                                                fontSize: "14px",
+                                            },
+                                        }}
+                                    />
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    padding: "0",
+
+                                                    color: "grey",
+                                                    "&.Mui-checked": {
+                                                        color: "grey",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label="50% or more"
+                                        sx={{
+                                            "& .MuiTypography-root": {
+                                                fontFamily: "Mina",
+                                                fontSize: "14px",
+                                            },
+                                        }}
+                                    />
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                sx={{
+                                                    padding: "0",
+
+                                                    color: "grey",
+                                                    "&.Mui-checked": {
+                                                        color: "grey",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label="60% or more"
+                                        sx={{
+                                            "& .MuiTypography-root": {
+                                                fontFamily: "Mina",
+                                                fontSize: "14px",
+                                            },
+                                        }}
+                                    />
+                                </Box>
+                            </Box>
                         </Box>
-                    </Box>
-                    <Box className='reating' sx={{ backgroundColor: "violet", height: "auto", width:'100%' }}>
-                        <Typography sx={{ fontFamily: "Mina" }}>OFFERS</Typography>
-
-                        <Box sx={{height:"auto", display:'flex', flexDirection:'column', width:'100% !important', padding:'1rem 0 0 2rem '}}>
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        sx={{
-                                            padding:'0',
-                                            color: "grey",
-                                            "&.Mui-checked": {
-                                                color: "grey",
-                                            },
-                                        }}
-                                    />
-                                }
-                                label="30% or more"
-                                sx={{
-                                    // height:'22px',
-                                    
-                                    "& .MuiTypography-root": {
-                                        fontFamily: "Mina",
-                                        fontSize:"14px"
-
-                                        
-                                    },
-                                }}
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        sx={{
-                                            padding:'0',
-                                            
-                                            color: "grey",
-                                            "&.Mui-checked": {
-                                                color: "grey",
-                                            },
-                                        }}
-                                    />
-                                }
-                                label="40% or more"
-                                sx={{
-                                    // height:'22px',
-                                    "& .MuiTypography-root": {
-                                        fontFamily: "Mina",
-                                        fontSize:"14px"
-                                        
-                                    },
-                                }}
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        sx={{
-                                            padding:'0',
-                                            
-                                            color: "grey",
-                                            "&.Mui-checked": {
-                                                color: "grey",
-                                            },
-                                        }}
-                                    />
-                                }
-                                label="50% or more"
-                                sx={{
-                                    // height:'22px',
-                                    "& .MuiTypography-root": {
-                                        fontFamily: "Mina",
-                                        fontSize:"14px"
-                                        
-                                    },
-                                }}
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        sx={{
-                                            padding:'0',
-                                            
-                                            color: "grey",
-                                            "&.Mui-checked": {
-                                                color: "grey",
-                                            },
-                                        }}
-                                    />
-                                }
-                                label="60% or more"
-                                sx={{
-                                    // height:'22px',
-                                    "& .MuiTypography-root": {
-                                        fontFamily: "Mina",
-                                        fontSize:"14px"
-                                        
-                                    },
-                                }}
-                            />
-                            
-                           
-                        </Box>
-                    </Box>
-
+               
                     </Box>
                 </Box>
 
@@ -1005,10 +1112,6 @@ const Shop = () => {
                             </Box>
                         </CardContent>
                     </Card>
-          
-
-                    
-                  
                 </Box>
             </Stack>
 
