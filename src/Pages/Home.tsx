@@ -6,7 +6,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { FaRegRegistered } from "react-icons/fa";
 import ModelsPage from "./ModelsPage";
 import AboutPage from "./AboutPage";
-import Footer from "./Footer";
+import Footer from "../Components/Footer";
 import HamburgerBar from "../Components/HamburgerBar";
 import { useNavigate } from "react-router-dom";
 

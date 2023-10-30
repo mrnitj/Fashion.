@@ -5,6 +5,7 @@ import SignUpPage from "./Pages/SignUpPage";
 
 import { Routes, Route } from "react-router-dom";
 import Shop from "./Pages/Shop";
+import View from "./Pages/View";
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/signup" element={<SignUpPage />} />
                     <Route path="/shop" element={<Shop />} />
+                    <Route path="/view" element={<View />} />
                 </Routes>
             </Stack>
         </>
