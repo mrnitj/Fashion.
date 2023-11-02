@@ -27,3 +27,11 @@ ul {
     width: 6rem;
     color: white;
 }
+
+@media (max-width:400px){
+
+.sidebarBox{
+    display: none;
+}
+
+}
