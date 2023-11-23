@@ -1,11 +1,13 @@
+import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import LoginPage from "./Pages/LoginPage";
 import { Stack } from "@mui/material";
 import SignUpPage from "./Pages/SignUpPage";
 
-import { Routes, Route } from "react-router-dom";
 import Shop from "./Pages/Shop";
 import View from "./Pages/View";
+import Cart from "./Pages/Cart";
+import { DealerHome } from "./Dealer/DealerPages/DealerHome";
 
 const App = () => {
     return (
@@ -17,6 +19,8 @@ const App = () => {
                     <Route path="/signup" element={<SignUpPage />} />
                     <Route path="/shop" element={<Shop />} />
                     <Route path="/view" element={<View />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/dealer" element={<DealerHome/>} />
                 </Routes>
             </Stack>
         </>

@@ -1,9 +1,62 @@
+import { useRef } from "react";
 import "../Styles/SignUpPage.css";
 import { Stack, Box, TextField, FormLabel, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { FaRegRegistered } from "react-icons/fa";
+import axios from "axios";
+
+interface UserData {
+    username: string;
+    password: string;
+    email: string;
+    accessKey: string;
+}
 
 const SignUpPage = () => {
+    // const username": "motu1",
+    // "password": "motu",
+    // "email": "motu1@mail.com",
+
+    const usernameRef: React.RefObject<HTMLInputElement> = useRef(null);
+    const emailRef: React.RefObject<HTMLInputElement> = useRef(null);
+    const passwordRef: React.RefObject<HTMLInputElement> = useRef(null);
+
+    const handleRegister = async () => {
+        try {
+            const usernameValue = usernameRef.current?.value;
+            const emailValue = emailRef.current?.value;
+            const passwordValue = passwordRef.current?.value;
+            const accessKey = "67e987e13f0bbbc3dcd0";
+
+            if (usernameValue && emailValue && passwordValue) {
+                const userData: UserData = {
+                    username: usernameValue,
+                    email: emailValue,
+                    password: passwordValue,
+                    accessKey: accessKey,
+                };
+
+                const response = await axios.post("https://ecommerce-api.bridgeon.in/users/register", userData);
+                console.log(response);
+
+                if (response.status === 201) {
+                    alert("user registered successfully");
+                    localStorage.setItem("userToken", response.data.data.token);
+                }
+                if (response.status === 400) {
+                    return alert("User Already Exists");
+                }
+
+                // Now you can use userData to send the registration data to your server or perform other actions.
+                console.log("User Data:", userData);
+            } else {
+                console.error("Please fill in all the fields");
+            }
+        } catch (error) {
+            alert("User Already Exists=");
+        }
+    };
+
     const navigate = useNavigate();
 
     return (
@@ -63,9 +116,10 @@ const SignUpPage = () => {
                     }}
                 >
                     <FormLabel className="SigninLabels" sx={{ fontFamily: "Mina" }}>
-                        Email
+                        Username
                     </FormLabel>
                     <TextField
+                        inputRef={usernameRef}
                         className="SigninTextfield"
                         variant="standard"
                         placeholder="name"
@@ -86,6 +140,7 @@ const SignUpPage = () => {
                         Email
                     </FormLabel>
                     <TextField
+                        inputRef={emailRef}
                         className="SigninTextfield"
                         type="email"
                         variant="standard"
@@ -108,6 +163,7 @@ const SignUpPage = () => {
                         Password
                     </FormLabel>
                     <TextField
+                        inputRef={passwordRef}
                         className="SigninTextfield"
                         type="password"
                         size={"small"}
@@ -136,6 +192,7 @@ const SignUpPage = () => {
                             color: "black",
                             fontFamily: "Mina",
                         }}
+                        onClick={handleRegister}
                     >
                         SignUp
                     </Button>

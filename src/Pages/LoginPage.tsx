@@ -1,11 +1,56 @@
+import {useRef} from 'react'
+import axios from 'axios'
+
 import "../Styles/LoginPage.css";
 import { useNavigate } from "react-router-dom";
 
 import { Stack, Box, TextField, Typography, Button, FormLabel } from "@mui/material";
 import { FaRegRegistered } from "react-icons/fa";
 
+interface UserData {
+    email: string;
+    password: string;
+    accessKey: string;
+}
+
 const LoginPage = () => {
     const navigate = useNavigate();
+    const emailRef: React.RefObject<HTMLInputElement> = useRef(null);
+    const passwordRef: React.RefObject<HTMLInputElement> = useRef(null);
+
+    const token = localStorage.getItem('userToken')
+
+    const handleLogin = async()=>{
+        try{
+            const emailValue = emailRef.current?.value;
+            const passwordValue = passwordRef.current?.value;
+            const accessKey = "67e987e13f0bbbc3dcd0";
+
+            if(emailValue && passwordValue){
+                const userData :UserData ={
+                    email:emailValue,
+                    password:passwordValue,
+                    accessKey:accessKey
+                }
+                const response = await axios.post("https://ecommerce-api.bridgeon.in/users/login",userData, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+
+                    }
+                })
+                console.log(response);
+                if(response.status === 200){
+                    alert('user Login success full')
+                    navigate('/')
+                }
+                
+            }
+        }
+        catch(error){
+            alert('user is not verified')
+        }
+
+    }
 
     return (
         <Stack className="LoginMainStack" sx={{ height: "100vh", display: "flex", flexDirection: "row" }}>
@@ -52,6 +97,7 @@ const LoginPage = () => {
                         Email
                     </FormLabel>
                     <TextField
+                    inputRef={emailRef}
                         className="LoginTextfield"
                         type="email"
                         variant="standard"
@@ -73,6 +119,7 @@ const LoginPage = () => {
                         Password
                     </FormLabel>
                     <TextField
+                        inputRef={passwordRef}
                         className="LoginTextfield"
                         type="password"
                         size={"small"}
@@ -101,11 +148,12 @@ const LoginPage = () => {
                             color: "black",
                             fontFamily: "Mina",
                         }}
+                        onClick={handleLogin}
                     >
                         Login
                     </Button>
                     <Typography sx={{ letterSpacing: "2px", fontFamily: "Mina" }}>
-                        don’t have an account{" "}
+                        don't have an account{" "}
                         <span
                             style={{ color: "blue", fontWeight: "700", cursor: "pointer" }}
                             onClick={() => navigate("/signup")}
