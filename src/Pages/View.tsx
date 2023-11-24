@@ -2,7 +2,7 @@ import '../Styles/View.css'
 import { useNavigate } from "react-router-dom";
 import { FaRegRegistered } from "react-icons/fa";
 import {Stack,Box,Button,Typography, Card, CardMedia,CardContent} from '@mui/material'
-import HamburgerBar from "../Components/HamburgerBar";
+import HamburgerBar from "../Components/HamburgerBar";  
 import FooterSmall from '../Components/FooterSmall';
 import Similar_Products from '../Components/Similar_Products';
 
@@ -143,6 +143,7 @@ const View = () => {
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, unde.
                         </Typography>
                         <Typography className='view_sizes' sx={{display:'flex'}} >
+
                             <li>s</li>
                             <li>m</li>
                             <li>l</li>

@@ -14,11 +14,11 @@
     height: 100px;
 } */
 
-li {
+.ul li {
     list-style: none;
     font-size: .7rem;
 }
-ul {
+.ul {
     display: flex;
     align-items: center;
     justify-content: center;

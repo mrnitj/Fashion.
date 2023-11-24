@@ -82,6 +82,7 @@ const Shop = () => {
                     }}
                 >
                     <Typography
+                        onClick={()=>navigate('/cart')}
                         className="HomeNavP"
                         fontFamily={"inherit"}
                         sx={{
@@ -494,7 +495,7 @@ const Shop = () => {
                                     Black Pants
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul>
+                                    <ul className="ul">
                                         <li>s</li>
                                         <li>m</li>
                                         <li>l</li>
@@ -570,7 +571,7 @@ const Shop = () => {
                                     Black Pants
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul>
+                                    <ul className="ul">
                                         <li>s</li>
                                         <li>m</li>
                                         <li>l</li>
@@ -644,7 +645,7 @@ const Shop = () => {
                                     Black Pants
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul>
+                                    <ul className="ul">
                                         <li>s</li>
                                         <li>m</li>
                                         <li>l</li>
@@ -718,7 +719,7 @@ const Shop = () => {
                                     Black Pants
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul>
+                                    <ul className="ul">
                                         <li>s</li>
                                         <li>m</li>
                                         <li>l</li>
@@ -792,7 +793,7 @@ const Shop = () => {
                                     Black Pants
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul>
+                                    <ul className="ul">
                                         <li>s</li>
                                         <li>m</li>
                                         <li>l</li>
@@ -866,7 +867,7 @@ const Shop = () => {
                                     Black Pants
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul>
+                                    <ul className="ul">
                                         <li>s</li>
                                         <li>m</li>
                                         <li>l</li>
@@ -940,7 +941,7 @@ const Shop = () => {
                                     Black Pants
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul>
+                                    <ul className="ul">
                                         <li>s</li>
                                         <li>m</li>
                                         <li>l</li>
@@ -1014,7 +1015,7 @@ const Shop = () => {
                                     Black Pants
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul>
+                                    <ul className="ul">
                                         <li>s</li>
                                         <li>m</li>
                                         <li>l</li>
@@ -1088,7 +1089,7 @@ const Shop = () => {
                                     Black Pants
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul>
+                                    <ul className="ul">
                                         <li>s</li>
                                         <li>m</li>
                                         <li>l</li>
@@ -1112,6 +1113,8 @@ const Shop = () => {
                             </Box>
                         </CardContent>
                     </Card>
+
+                   
                 </Box>
             </Stack>
 

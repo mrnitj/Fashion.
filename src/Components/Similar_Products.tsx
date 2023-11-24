@@ -82,7 +82,7 @@ const SimilarProducts = () => {
                                     Black Pants
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul>
+                                    <ul className='ul'>
                                         <li>s</li>
                                         <li>m</li>
                                         <li>l</li>
