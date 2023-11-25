@@ -13,18 +13,13 @@ export const DealerLogin = () => {
     const adminLoginHandler = async () => {
         const email = emailRef.current?.value;
         const password = passwordRef.current?.value;
-
         if (email && password) {
             const dealerData: dealerData = {
                 email: email,
                 password: password,
             };
-
             const response = await axios.post("https://ecommerce-api.bridgeon.in/login", dealerData);
-
             localStorage.setItem("dealerToken", response.data.data.token);
-
-            console.log(response.data.data.token);
         }
     };
 

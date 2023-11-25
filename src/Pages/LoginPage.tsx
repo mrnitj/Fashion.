@@ -1,5 +1,5 @@
-import {useRef} from 'react'
-import axios from 'axios'
+import { useRef } from "react";
+import axios from "axios";
 
 import "../Styles/LoginPage.css";
 import { useNavigate } from "react-router-dom";
@@ -18,39 +18,35 @@ const LoginPage = () => {
     const emailRef: React.RefObject<HTMLInputElement> = useRef(null);
     const passwordRef: React.RefObject<HTMLInputElement> = useRef(null);
 
-    const token = localStorage.getItem('userToken')
+    const token = localStorage.getItem("userToken");
 
-    const handleLogin = async()=>{
-        try{
+    const handleLogin = async () => {
+        try {
             const emailValue = emailRef.current?.value;
             const passwordValue = passwordRef.current?.value;
             const accessKey = "67e987e13f0bbbc3dcd0";
 
-            if(emailValue && passwordValue){    
-                const userData :UserData ={
-                    email:emailValue,
-                    password:passwordValue,
-                    accessKey:accessKey
-                }
-                const response = await axios.post("https://ecommerce-api.bridgeon.in/users/login",userData, {
+            if (emailValue && passwordValue) {
+                const userData: UserData = {
+                    email: emailValue,
+                    password: passwordValue,
+                    accessKey: accessKey,
+                };
+                const response = await axios.post("https://ecommerce-api.bridgeon.in/users/login", userData, {
                     headers: {
-                        Authorization: `Bearer ${token}`
-
-                    }
-                })
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
                 console.log(response);
-                if(response.status === 200){
-                    alert('user Login success full')
-                    navigate('/')
+                if (response.status === 200) {
+                    alert("user Login success full");
+                    navigate("/");
                 }
-                
             }
+        } catch (error) {
+            alert("user is not verified");
         }
-        catch(error){
-            alert('user is not verified')
-        }
-
-    }
+    };
 
     return (
         <Stack className="LoginMainStack" sx={{ height: "100vh", display: "flex", flexDirection: "row" }}>
@@ -97,7 +93,7 @@ const LoginPage = () => {
                         Email
                     </FormLabel>
                     <TextField
-                    inputRef={emailRef}
+                        inputRef={emailRef}
                         className="LoginTextfield"
                         type="email"
                         variant="standard"
