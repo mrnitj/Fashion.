@@ -8,15 +8,15 @@ const usersdata = [
   { id: 4, lastName: 'jojo', firstName: 'Jon', age: 35 },
 ];
 
-const removeUser = (userId: number) => {
-  // Add logic to remove the user
-  console.log(`Removing user with ID ${userId}`);
-};
+// const removeUser = (userId: number) => {
+//   // Add logic to remove the user
+//   console.log(`Removing user with ID ${userId}`);
+// };
 
-const viewDetails = (userId: number) => {
-  // Add logic to view full details of the user
-  console.log(`Viewing details for user with ID ${userId}`);
-};
+// const viewDetails = (userId: number) => {
+//   // Add logic to view full details of the user
+//   console.log(`Viewing details for user with ID ${userId}`);
+// };
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 200, headerAlign: 'center', align: 'center' },

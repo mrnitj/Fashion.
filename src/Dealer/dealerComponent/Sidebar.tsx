@@ -16,11 +16,11 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import PersonIcon from "@mui/icons-material/Person";
 import InventoryIcon from '@mui/icons-material/Inventory';
 import { Users } from "../DealerPages/Users";
 import { Products } from "../DealerPages/Products";
+import { AddProducts } from "../DealerPages/AddProducts";
 
 const drawerWidth = 240;
 
@@ -196,6 +196,33 @@ export const Sidebar = () => {
                             <ListItemText primary={"PRODUCTS"} sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
+                    <ListItem
+                        disablePadding
+                        sx={{ display: "block" }}
+                        onClick={() => {
+                            setSideBarChilder(<AddProducts />);
+                        }}
+                    >
+                        <ListItemButton
+                            sx={{
+                                minHeight: 48,
+                                justifyContent: open ? "initial" : "center",
+                                px: 2.5,
+                            }}
+                        >
+                            <ListItemIcon
+                                sx={{
+                                    minWidth: 0,
+                                    mr: open ? 3 : "auto",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <InventoryIcon style={{fontSize:'2rem'}}/>
+                            </ListItemIcon>
+                            <ListItemText primary={"ADD PRODUCTS"} sx={{ opacity: open ? 1 : 0 }} />
+                        </ListItemButton>
+                    </ListItem>
+                   
                 </List>
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
