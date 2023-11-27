@@ -52,7 +52,7 @@ export const AddProducts = () => {
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <label htmlFor="img">image</label>
-            <input type="text" ref={imgRef} />
+            <input type="file" ref={imgRef} />
 
             <label htmlFor="name">name</label>
             <input type="text" ref={nameRef} />
