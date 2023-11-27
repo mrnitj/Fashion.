@@ -19,6 +19,8 @@ export const Products = () => {
     const getAllProducts = async () => {
         try {
             const response = await axios.get<{ data: Product[] }>("https://ecommerce-api.bridgeon.in/products?accessKey=b5e90860cce3874bdd3b");
+            console.log(response);
+            
             setAllProducts(response.data.data);
         } catch (error) {
             console.log(error);
