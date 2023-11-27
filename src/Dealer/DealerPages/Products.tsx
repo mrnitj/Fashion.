@@ -86,7 +86,7 @@ export const Products = () => {
                                         color: "white",
                                     }}
                                 >
-                                    add
+                                    update
                                 </button>
                             </TableCell>
                             <TableCell align="right">

@@ -21,9 +21,27 @@ import {
 } from "@mui/material";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Shop = () => {
+    const [products, setProducts] = useState<Product[]>([]);
+
     const navigate = useNavigate();
+
+    const fetchAllProducts = async () => {
+        try {
+            const response = await axios.get("https://ecommerce-api.bridgeon.in/products?accessKey=b5e90860cce3874bdd3b");
+            console.log(response.data.data);
+            setProducts(response.data.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        fetchAllProducts();
+    }, []);
 
     return (
         <Stack className="ShopMainStack" sx={{ height: "200vh" }} spacing={6}>
@@ -82,7 +100,7 @@ const Shop = () => {
                     }}
                 >
                     <Typography
-                        onClick={()=>navigate('/cart')}
+                        onClick={() => navigate("/cart")}
                         className="HomeNavP"
                         fontFamily={"inherit"}
                         sx={{
@@ -121,7 +139,7 @@ const Shop = () => {
                 spacing={6}
                 sx={{ height: "100%", padding: "0 5rem", backgroundColor: "blu" }}
             >
-                <Box className="sidebarBox" sx={{backgroundColor: "re", padding: "0", height:'auto'}}>
+                <Box className="sidebarBox" sx={{ backgroundColor: "re", padding: "0", height: "auto" }}>
                     <Box
                         className="sidebar_content"
                         sx={{
@@ -269,7 +287,6 @@ const Shop = () => {
                                         }
                                         label="4★ & above"
                                         sx={{
-
                                             "& .MuiTypography-root": {
                                                 fontFamily: "Mina",
                                                 fontSize: "14px",
@@ -439,682 +456,91 @@ const Shop = () => {
                                 </Box>
                             </Box>
                         </Box>
-               
                     </Box>
                 </Box>
 
                 <Box className="ShopMainBox" sx={{ display: "flex", flexWrap: "wrap", gap: "2rem 1rem" }}>
                     {/* -------------------- */}
-                    <Card
-                        sx={{
-                            backgroundColor: "transparent",
-                            width: "15rem",
-                            height: "362px",
-                            boxShadow: "none",
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem",
-                        }}
-                    >
-                        <CardMedia
-                            className="ShopCardmedia"
-                            sx={{ height: 250, width: "auto", borderRadius: "8px 8px 0 0 " }}
-                            image="https://sslimages.shoppersstop.com/sys-master/images/ha3/h58/17477514166302/A21342WPANTS118_BLACK_alt1.jpg_2000Wx3000H"
-                            title="green iguana"
-                        />
-                        <CardContent
+                    {products.map((product) => (
+                        <Card
+                            key={product._id}
                             sx={{
-                                padding: "0 !important",
-                                backgroundColor: "#DFDADA",
-                                margin: "0",
-                                borderRadius: " 0 0 8px 8px",
+                                backgroundColor: "transparent",
+                                width: "15rem",
+                                height: "362px",
+                                boxShadow: "none",
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "1rem",
                             }}
                         >
-                            <Box
+                            <CardMedia
+                                className="ShopCardmedia"
+                                sx={{ height: 250, width: "auto", borderRadius: "8px 8px 0 0 " }}
+                                image={product.image}
+                            />
+                            <CardContent
                                 sx={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    padding: "0",
+                                    padding: "0 !important",
+                                    backgroundColor: "#DFDADA",
+                                    margin: "0",
+                                    borderRadius: " 0 0 8px 8px",
                                 }}
                             >
-                                <Typography
-                                    className="ShopCardP"
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
+                                <Box
                                     sx={{
-                                        fontSize: "1.4rem",
-                                        margin: "0",
+                                        width: "100%",
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignItems: "center",
                                         padding: "0",
-                                        fontFamily: "Mina",
-                                        fontWeight: "700",
                                     }}
                                 >
-                                    Black Pants
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul className="ul">
-                                        <li>s</li>
-                                        <li>m</li>
-                                        <li>l</li>
-                                        <li>xl</li>
-                                    </ul>
-                                </Typography>
-                            </Box>
-                            <Box
-                                sx={{
-                                    padding: "0",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "space-between",
-                                }}
-                            >
-                                <Typography sx={{ padding: "0", fontFamily: "Mina", fontSize: ".9rem" }}>$99.00</Typography>
-                                <Checkbox
-                                    icon={<FavoriteBorderIcon sx={{ fontSize: "2rem" }} />} // Unchecked icon
-                                    checkedIcon={<FavoriteIcon sx={{ fontSize: "2rem", color: "grey" }} />} // Checked icon
-                                />
-                            </Box>
-                        </CardContent>
-                    </Card>
+                                    <Typography
+                                        className="ShopCardP"
+                                        gutterBottom
+                                        variant="h5"
+                                        component="div"
+                                        sx={{
+                                            fontSize: "1.4rem",
+                                            margin: "0",
+                                            padding: "0",
+                                            fontFamily: "Mina",
+                                            fontWeight: "700",
+                                        }}
+                                    >
+                                        {product.title}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
+                                        <ul className="ul">
+                                            <li>s</li>
+                                            <li>m</li>
+                                            <li>l</li>
+                                            <li>xl</li>
+                                        </ul>
+                                    </Typography>
+                                </Box>
+                                <Box
+                                    sx={{
+                                        padding: "0",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "space-between",
+                                    }}
+                                >
+                                    <Typography sx={{ padding: "0", fontFamily: "Mina", fontSize: ".9rem" }}>
+                                        {product.price}
+                                    </Typography>
+                                    <Checkbox
+                                        icon={<FavoriteBorderIcon sx={{ fontSize: "2rem" }} />} // Unchecked icon
+                                        checkedIcon={<FavoriteIcon sx={{ fontSize: "2rem", color: "grey" }} />} // Checked icon
+                                    />
+                                </Box>
+                            </CardContent>
+                        </Card>
+                    ))}
+
                     {/* -------------------- */}
-
-                    <Card
-                        sx={{
-                            backgroundColor: "transparent",
-                            width: "15rem",
-                            height: "362px",
-                            boxShadow: "none",
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem",
-                        }}
-                    >
-                        <CardMedia
-                            className="ShopCardmedia"
-                            sx={{ height: 250, width: "auto", borderRadius: "8px 8px 0 0 " }}
-                            image="https://sslimages.shoppersstop.com/sys-master/images/ha3/h58/17477514166302/A21342WPANTS118_BLACK_alt1.jpg_2000Wx3000H"
-                            title="green iguana"
-                        />
-                        <CardContent
-                            sx={{
-                                padding: "0 !important",
-                                backgroundColor: "#DFDADA",
-                                margin: "0",
-                                borderRadius: " 0 0 8px 8px",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    padding: "0",
-                                }}
-                            >
-                                <Typography
-                                    className="ShopCardP"
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
-                                    sx={{
-                                        fontSize: "1.4rem",
-                                        margin: "0",
-                                        padding: "0",
-                                        fontFamily: "Mina",
-                                        fontWeight: "700",
-                                    }}
-                                >
-                                    Black Pants
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul className="ul">
-                                        <li>s</li>
-                                        <li>m</li>
-                                        <li>l</li>
-                                        <li>xl</li>
-                                    </ul>
-                                </Typography>
-                            </Box>
-                            <Box
-                                sx={{
-                                    padding: "0",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "space-between",
-                                }}
-                            >
-                                <Typography sx={{ padding: "0", fontFamily: "Mina", fontSize: ".9rem" }}>$99.00</Typography>
-                                <Checkbox
-                                    icon={<FavoriteBorderIcon sx={{ fontSize: "2rem" }} />} // Unchecked icon
-                                    checkedIcon={<FavoriteIcon sx={{ fontSize: "2rem", color: "grey" }} />} // Checked icon
-                                />
-                            </Box>
-                        </CardContent>
-                    </Card>
-                    <Card
-                        sx={{
-                            backgroundColor: "transparent",
-                            width: "15rem",
-                            height: "362px",
-                            boxShadow: "none",
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem",
-                        }}
-                    >
-                        <CardMedia
-                            className="ShopCardmedia"
-                            sx={{ height: 250, width: "auto", borderRadius: "8px 8px 0 0 " }}
-                            image="https://sslimages.shoppersstop.com/sys-master/images/ha3/h58/17477514166302/A21342WPANTS118_BLACK_alt1.jpg_2000Wx3000H"
-                            title="green iguana"
-                        />
-                        <CardContent
-                            sx={{
-                                padding: "0 !important",
-                                backgroundColor: "#DFDADA",
-                                margin: "0",
-                                borderRadius: " 0 0 8px 8px",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    padding: "0",
-                                }}
-                            >
-                                <Typography
-                                    className="ShopCardP"
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
-                                    sx={{
-                                        fontSize: "1.4rem",
-                                        margin: "0",
-                                        padding: "0",
-                                        fontFamily: "Mina",
-                                        fontWeight: "700",
-                                    }}
-                                >
-                                    Black Pants
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul className="ul">
-                                        <li>s</li>
-                                        <li>m</li>
-                                        <li>l</li>
-                                        <li>xl</li>
-                                    </ul>
-                                </Typography>
-                            </Box>
-                            <Box
-                                sx={{
-                                    padding: "0",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "space-between",
-                                }}
-                            >
-                                <Typography sx={{ padding: "0", fontFamily: "Mina", fontSize: ".9rem" }}>$99.00</Typography>
-                                <Checkbox
-                                    icon={<FavoriteBorderIcon sx={{ fontSize: "2rem" }} />} // Unchecked icon
-                                    checkedIcon={<FavoriteIcon sx={{ fontSize: "2rem", color: "grey" }} />} // Checked icon
-                                />
-                            </Box>
-                        </CardContent>
-                    </Card>
-                    <Card
-                        sx={{
-                            backgroundColor: "transparent",
-                            width: "15rem",
-                            height: "362px",
-                            boxShadow: "none",
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem",
-                        }}
-                    >
-                        <CardMedia
-                            className="ShopCardmedia"
-                            sx={{ height: 250, width: "auto", borderRadius: "8px 8px 0 0 " }}
-                            image="https://sslimages.shoppersstop.com/sys-master/images/ha3/h58/17477514166302/A21342WPANTS118_BLACK_alt1.jpg_2000Wx3000H"
-                            title="green iguana"
-                        />
-                        <CardContent
-                            sx={{
-                                padding: "0 !important",
-                                backgroundColor: "#DFDADA",
-                                margin: "0",
-                                borderRadius: " 0 0 8px 8px",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    padding: "0",
-                                }}
-                            >
-                                <Typography
-                                    className="ShopCardP"
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
-                                    sx={{
-                                        fontSize: "1.4rem",
-                                        margin: "0",
-                                        padding: "0",
-                                        fontFamily: "Mina",
-                                        fontWeight: "700",
-                                    }}
-                                >
-                                    Black Pants
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul className="ul">
-                                        <li>s</li>
-                                        <li>m</li>
-                                        <li>l</li>
-                                        <li>xl</li>
-                                    </ul>
-                                </Typography>
-                            </Box>
-                            <Box
-                                sx={{
-                                    padding: "0",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "space-between",
-                                }}
-                            >
-                                <Typography sx={{ padding: "0", fontFamily: "Mina", fontSize: ".9rem" }}>$99.00</Typography>
-                                <Checkbox
-                                    icon={<FavoriteBorderIcon sx={{ fontSize: "2rem" }} />} // Unchecked icon
-                                    checkedIcon={<FavoriteIcon sx={{ fontSize: "2rem", color: "grey" }} />} // Checked icon
-                                />
-                            </Box>
-                        </CardContent>
-                    </Card>
-                    <Card
-                        sx={{
-                            backgroundColor: "transparent",
-                            width: "15rem",
-                            height: "362px",
-                            boxShadow: "none",
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem",
-                        }}
-                    >
-                        <CardMedia
-                            className="ShopCardmedia"
-                            sx={{ height: 250, width: "auto", borderRadius: "8px 8px 0 0 " }}
-                            image="https://sslimages.shoppersstop.com/sys-master/images/ha3/h58/17477514166302/A21342WPANTS118_BLACK_alt1.jpg_2000Wx3000H"
-                            title="green iguana"
-                        />
-                        <CardContent
-                            sx={{
-                                padding: "0 !important",
-                                backgroundColor: "#DFDADA",
-                                margin: "0",
-                                borderRadius: " 0 0 8px 8px",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    padding: "0",
-                                }}
-                            >
-                                <Typography
-                                    className="ShopCardP"
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
-                                    sx={{
-                                        fontSize: "1.4rem",
-                                        margin: "0",
-                                        padding: "0",
-                                        fontFamily: "Mina",
-                                        fontWeight: "700",
-                                    }}
-                                >
-                                    Black Pants
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul className="ul">
-                                        <li>s</li>
-                                        <li>m</li>
-                                        <li>l</li>
-                                        <li>xl</li>
-                                    </ul>
-                                </Typography>
-                            </Box>
-                            <Box
-                                sx={{
-                                    padding: "0",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "space-between",
-                                }}
-                            >
-                                <Typography sx={{ padding: "0", fontFamily: "Mina", fontSize: ".9rem" }}>$99.00</Typography>
-                                <Checkbox
-                                    icon={<FavoriteBorderIcon sx={{ fontSize: "2rem" }} />} // Unchecked icon
-                                    checkedIcon={<FavoriteIcon sx={{ fontSize: "2rem", color: "grey" }} />} // Checked icon
-                                />
-                            </Box>
-                        </CardContent>
-                    </Card>
-                    <Card
-                        sx={{
-                            backgroundColor: "transparent",
-                            width: "15rem",
-                            height: "362px",
-                            boxShadow: "none",
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem",
-                        }}
-                    >
-                        <CardMedia
-                            className="ShopCardmedia"
-                            sx={{ height: 250, width: "auto", borderRadius: "8px 8px 0 0 " }}
-                            image="https://sslimages.shoppersstop.com/sys-master/images/ha3/h58/17477514166302/A21342WPANTS118_BLACK_alt1.jpg_2000Wx3000H"
-                            title="green iguana"
-                        />
-                        <CardContent
-                            sx={{
-                                padding: "0 !important",
-                                backgroundColor: "#DFDADA",
-                                margin: "0",
-                                borderRadius: " 0 0 8px 8px",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    padding: "0",
-                                }}
-                            >
-                                <Typography
-                                    className="ShopCardP"
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
-                                    sx={{
-                                        fontSize: "1.4rem",
-                                        margin: "0",
-                                        padding: "0",
-                                        fontFamily: "Mina",
-                                        fontWeight: "700",
-                                    }}
-                                >
-                                    Black Pants
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul className="ul">
-                                        <li>s</li>
-                                        <li>m</li>
-                                        <li>l</li>
-                                        <li>xl</li>
-                                    </ul>
-                                </Typography>
-                            </Box>
-                            <Box
-                                sx={{
-                                    padding: "0",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "space-between",
-                                }}
-                            >
-                                <Typography sx={{ padding: "0", fontFamily: "Mina", fontSize: ".9rem" }}>$99.00</Typography>
-                                <Checkbox
-                                    icon={<FavoriteBorderIcon sx={{ fontSize: "2rem" }} />} // Unchecked icon
-                                    checkedIcon={<FavoriteIcon sx={{ fontSize: "2rem", color: "grey" }} />} // Checked icon
-                                />
-                            </Box>
-                        </CardContent>
-                    </Card>
-                    <Card
-                        sx={{
-                            backgroundColor: "transparent",
-                            width: "15rem",
-                            height: "362px",
-                            boxShadow: "none",
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem",
-                        }}
-                    >
-                        <CardMedia
-                            className="ShopCardmedia"
-                            sx={{ height: 250, width: "auto", borderRadius: "8px 8px 0 0 " }}
-                            image="https://sslimages.shoppersstop.com/sys-master/images/ha3/h58/17477514166302/A21342WPANTS118_BLACK_alt1.jpg_2000Wx3000H"
-                            title="green iguana"
-                        />
-                        <CardContent
-                            sx={{
-                                padding: "0 !important",
-                                backgroundColor: "#DFDADA",
-                                margin: "0",
-                                borderRadius: " 0 0 8px 8px",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    padding: "0",
-                                }}
-                            >
-                                <Typography
-                                    className="ShopCardP"
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
-                                    sx={{
-                                        fontSize: "1.4rem",
-                                        margin: "0",
-                                        padding: "0",
-                                        fontFamily: "Mina",
-                                        fontWeight: "700",
-                                    }}
-                                >
-                                    Black Pants
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul className="ul">
-                                        <li>s</li>
-                                        <li>m</li>
-                                        <li>l</li>
-                                        <li>xl</li>
-                                    </ul>
-                                </Typography>
-                            </Box>
-                            <Box
-                                sx={{
-                                    padding: "0",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "space-between",
-                                }}
-                            >
-                                <Typography sx={{ padding: "0", fontFamily: "Mina", fontSize: ".9rem" }}>$99.00</Typography>
-                                <Checkbox
-                                    icon={<FavoriteBorderIcon sx={{ fontSize: "2rem" }} />} // Unchecked icon
-                                    checkedIcon={<FavoriteIcon sx={{ fontSize: "2rem", color: "grey" }} />} // Checked icon
-                                />
-                            </Box>
-                        </CardContent>
-                    </Card>
-                    <Card
-                        sx={{
-                            backgroundColor: "transparent",
-                            width: "15rem",
-                            height: "362px",
-                            boxShadow: "none",
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem",
-                        }}
-                    >
-                        <CardMedia
-                            className="ShopCardmedia"
-                            sx={{ height: 250, width: "auto", borderRadius: "8px 8px 0 0 " }}
-                            image="https://sslimages.shoppersstop.com/sys-master/images/ha3/h58/17477514166302/A21342WPANTS118_BLACK_alt1.jpg_2000Wx3000H"
-                            title="green iguana"
-                        />
-                        <CardContent
-                            sx={{
-                                padding: "0 !important",
-                                backgroundColor: "#DFDADA",
-                                margin: "0",
-                                borderRadius: " 0 0 8px 8px",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    padding: "0",
-                                }}
-                            >
-                                <Typography
-                                    className="ShopCardP"
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
-                                    sx={{
-                                        fontSize: "1.4rem",
-                                        margin: "0",
-                                        padding: "0",
-                                        fontFamily: "Mina",
-                                        fontWeight: "700",
-                                    }}
-                                >
-                                    Black Pants
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul className="ul">
-                                        <li>s</li>
-                                        <li>m</li>
-                                        <li>l</li>
-                                        <li>xl</li>
-                                    </ul>
-                                </Typography>
-                            </Box>
-                            <Box
-                                sx={{
-                                    padding: "0",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "space-between",
-                                }}
-                            >
-                                <Typography sx={{ padding: "0", fontFamily: "Mina", fontSize: ".9rem" }}>$99.00</Typography>
-                                <Checkbox
-                                    icon={<FavoriteBorderIcon sx={{ fontSize: "2rem" }} />} // Unchecked icon
-                                    checkedIcon={<FavoriteIcon sx={{ fontSize: "2rem", color: "grey" }} />} // Checked icon
-                                />
-                            </Box>
-                        </CardContent>
-                    </Card>
-                    <Card
-                        sx={{
-                            backgroundColor: "transparent",
-                            width: "15rem",
-                            height: "362px",
-                            boxShadow: "none",
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem",
-                        }}
-                    >
-                        <CardMedia
-                            className="ShopCardmedia"
-                            sx={{ height: 250, width: "auto", borderRadius: "8px 8px 0 0 " }}
-                            image="https://sslimages.shoppersstop.com/sys-master/images/ha3/h58/17477514166302/A21342WPANTS118_BLACK_alt1.jpg_2000Wx3000H"
-                            title="green iguana"
-                        />
-                        <CardContent
-                            sx={{
-                                padding: "0 !important",
-                                backgroundColor: "#DFDADA",
-                                margin: "0",
-                                borderRadius: " 0 0 8px 8px",
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    width: "100%",
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    padding: "0",
-                                }}
-                            >
-                                <Typography
-                                    className="ShopCardP"
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
-                                    sx={{
-                                        fontSize: "1.4rem",
-                                        margin: "0",
-                                        padding: "0",
-                                        fontFamily: "Mina",
-                                        fontWeight: "700",
-                                    }}
-                                >
-                                    Black Pants
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ padding: "0" }}>
-                                    <ul className="ul">
-                                        <li>s</li>
-                                        <li>m</li>
-                                        <li>l</li>
-                                        <li>xl</li>
-                                    </ul>
-                                </Typography>
-                            </Box>
-                            <Box
-                                sx={{
-                                    padding: "0",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "space-between",
-                                }}
-                            >
-                                <Typography sx={{ padding: "0", fontFamily: "Mina", fontSize: ".9rem" }}>$99.00</Typography>
-                                <Checkbox
-                                    icon={<FavoriteBorderIcon sx={{ fontSize: "2rem" }} />} // Unchecked icon
-                                    checkedIcon={<FavoriteIcon sx={{ fontSize: "2rem", color: "grey" }} />} // Checked icon
-                                />
-                            </Box>
-                        </CardContent>
-                    </Card>
-
-                   
                 </Box>
             </Stack>
 
