@@ -1,4 +1,15 @@
+import axios from 'axios';
 import React from 'react'
+
+interface productData {
+  img: string;
+  title: string;
+  price: string;
+  description: string;
+  category: string;
+}
+
+
 
 export const EditProduct = () => {
 
@@ -9,7 +20,7 @@ export const EditProduct = () => {
   const priceRef: React.RefObject<HTMLInputElement> = useRef(null);
   const decRef: React.RefObject<HTMLInputElement> = useRef(null);
   const catRef: React.RefObject<HTMLInputElement> = useRef(null);
-  const addProductHandler = async () => {
+  const editProductHandler = async () => {
       try {
           const img = imgRef.current?.value;
           const title = nameRef.current?.value;
@@ -66,7 +77,7 @@ export const EditProduct = () => {
     <label htmlFor="price">price</label>
     <input type="number" ref={priceRef} />
 
-    <button onClick={addProductHandler}>add</button>
+    <button onClick={editProductHandler}>add</button>
 </div>
   )
 }
