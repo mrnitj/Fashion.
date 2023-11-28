@@ -15,7 +15,7 @@ export const AddProducts = () => {
     const [image, setImage] = useState<File | null>(null);
 
 
-    const imageGetHandler= (e)=>{
+    const imageGetHandler= (e:any)=>{
         setImage(e.target.files[0])
     }
     console.log('image' , image);
