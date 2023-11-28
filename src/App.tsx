@@ -9,6 +9,7 @@ import View from "./Pages/View";
 import Cart from "./Pages/Cart";
 import { DealerHome } from "./Dealer/DealerPages/DealerHome";
 import { DealerLogin } from "./Dealer/DealerPages/DealerLogin";
+import { EditProduct } from "./Dealer/DealerPages/EditProduct";
 
 const App = () => {
     return (
@@ -23,6 +24,7 @@ const App = () => {
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/dealerlogin" element={<DealerLogin/>}/>
                     <Route path="/dealer" element={<DealerHome/>} />
+                    <Route path="/updateproduct/:id" element={<EditProduct/>} />
                 </Routes>
             </Stack>
         </>

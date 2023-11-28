@@ -77,6 +77,7 @@ export const Products = () => {
                             <TableCell align="right">{row.price}</TableCell>
                             <TableCell align="right">
                                 <button
+                                onClick={()=>navigate(`/updateproduct/${row._id}`)}
                                     style={{
                                         height: "50px",
                                         width: "60px",

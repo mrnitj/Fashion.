@@ -10,16 +10,12 @@ import { useRef, useState } from "react";
 // }
 
 export const AddProducts = () => {
-
-    
     const [image, setImage] = useState<File | null>(null);
 
-
-    const imageGetHandler= (e:any)=>{
-        setImage(e.target.files[0])
-    }
-    console.log('image' , image);
-    
+    const imageGetHandler = (e: any) => {
+        setImage(e.target.files[0]);
+    };
+    console.log("image", image);
 
     const nameRef: React.RefObject<HTMLInputElement> = useRef(null);
     const colorRef: React.RefObject<HTMLInputElement> = useRef(null);
@@ -34,26 +30,26 @@ export const AddProducts = () => {
             const price = priceRef.current?.value;
             const description = decRef.current?.value;
             const category = catRef.current?.value;
-    
+
             if (img && title && price && description && category) {
                 const productData = new FormData();
-                productData.append('img', img);
-                productData.append('title', title);
-                productData.append('price', price);
-                productData.append('description', description);
-                productData.append('category', category);
-    
+                productData.append("img", img);
+                productData.append("title", title);
+                productData.append("price", price);
+                productData.append("description", description);
+                productData.append("category", category);
+
                 console.log(productData);
-    
+
                 const token = localStorage.getItem("dealerToken");
-    
+
                 const response = await axios.post("https://ecommerce-api.bridgeon.in/products", productData, {
                     headers: {
                         Authorization: `Bearer ${token}`,
-                        'Content-Type': 'multipart/form-data', // Make sure to set the content type
+                        "Content-Type": "multipart/form-data", // Make sure to set the content type
                     },
                 });
-    
+
                 // Handle the response as needed
                 console.log(response);
             }
@@ -61,22 +57,19 @@ export const AddProducts = () => {
             setImage(null);
             nameRef.current!.value = "";
             priceRef.current!.value = "";
-            colorRef.current!.value="";
-            sizeRef.current!.value="";
+            colorRef.current!.value = "";
+            sizeRef.current!.value = "";
             decRef.current!.value = "";
             catRef.current!.value = "";
-    
-
         } catch (error) {
             console.log(error);
         }
     };
-    
 
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <label htmlFor="img">image</label>
-            <input type="file" onChange={(e)=>imageGetHandler(e)} />
+            <input type="file" onChange={(e) => imageGetHandler(e)} />
 
             <label htmlFor="name">name</label>
             <input type="text" ref={nameRef} />
