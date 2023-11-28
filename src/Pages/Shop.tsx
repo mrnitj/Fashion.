@@ -472,9 +472,16 @@ const Shop = () => {
                                 display: "flex",
                                 flexDirection: "column",
                                 gap: "1rem",
+                                transition: "transform 0.2s ease-in-out", // Add transition for smooth scaling
+                                ":hover": {
+                                    transform: "scale(1.02)", // Scale on hover
+                                    cursor:'pointer'
+                                },
                             }}
                         >
                             <CardMedia
+                            onClick={() => navigate(`/view/${product._id}`)}
+
                                 className="ShopCardmedia"
                                 sx={{ height: 250, width: "auto", borderRadius: "8px 8px 0 0 " }}
                                 image={product.image}
