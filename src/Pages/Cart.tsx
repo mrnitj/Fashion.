@@ -1,14 +1,5 @@
 import React from "react";
-import {
-    Stack,
-    Box,
-    Typography,
-    IconButton,
-    Button,
-    Card,
-    CardContent,
-    CardMedia,
-} from "@mui/material";
+import { Stack, Box, Typography, IconButton, Button, Card, CardContent, CardMedia } from "@mui/material";
 import { FaRegRegistered } from "react-icons/fa";
 import HamburgerBar from "../Components/HamburgerBar";
 import { useNavigate } from "react-router-dom";
@@ -87,8 +78,8 @@ const Cart = () => {
                 </Box>
             </Box>
 
-            <Stack className="CartContent" direction={'row'} sx={{ justifyContent: "space-around" }}>
-                <Box className="CartProductList" sx={{ width: "auto", height: "89vh", backgroundColor: "red" }}>
+            <Stack className="CartContent" direction={"row"} sx={{ justifyContent: "space-around" }}>
+                <Box className="CartProductList" sx={{ width: "auto", height: "89vh", backgroundColor: "re" }}>
                     <Card
                         sx={{
                             height: "10rem",
@@ -129,7 +120,7 @@ const Cart = () => {
                                     flexDirection: "row",
                                     justifyContent: "space-between",
                                     alignItems: "center",
-                                    width: "80%",
+                                    width: "100%",
                                 }}
                             >
                                 <Typography
@@ -144,13 +135,15 @@ const Cart = () => {
                                 <Button
                                     disableRipple
                                     sx={{
-                                        fontSize: "15px",
+                                        padding:".3rem 1rem"
+                                        ,
+                                        fontSize: "13px",
                                         fontFamily: "inherit",
                                         color: "black",
                                         fontWeight: "700",
                                         backgroundColor: "#d9d9d9",
                                         borderRadius: "81px",
-                                        textTransform: "uppercase",  // Change to 'uppercase'
+                                        textTransform: "uppercase", // Change to 'uppercase'
                                         "&:hover": {
                                             backgroundColor: "#a0a0a0",
                                             color: "white",
@@ -164,49 +157,77 @@ const Cart = () => {
                     </Card>
                 </Box>
                 <Box className="CartPriceDtails">
-                    <Card sx={{ width: '30rem', height: 'auto', display:"flex", flexDirection:"column", gap:'2rem', backgroundColor:'transparent', boxShadow:'none' }}>
-                        <Box sx={{display:"flex", flexDirection:"column", gap:"2rem", backgroundColor:"#E5E0E0", padding:"2rem 0"}}>
-
-
-                        <Box>
-                            <Typography>Price Details</Typography>
-                        </Box>
-                        <Box sx={{display:"flex", justifyContent:"space-between", borderBottom:'1px solid grey', paddingBottom:"2rem"}}>
-                            <Box>
-                                <Typography>Price</Typography>
-                                <Typography>Discount</Typography>
-                                <Typography>Delivery Charge</Typography>
+                    <Card
+                        sx={{
+                            width: "28rem",
+                            height: "auto",
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "2rem",
+                            backgroundColor: "transparent",
+                            boxShadow: "none",
+                            fontFamily: "Mina",
+                            // padding:"0 5rem",
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "2rem",
+                                backgroundColor: "#E5E0E0",
+                                padding: "2rem 2rem",
+                                borderRadius:"20px",
+                                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+                            }}
+                        >
+                            <Box sx={{alignSelf:"center"}}>
+                                <Typography sx={{ fontFamily: "inherit", fontSize:"1.5rem", fontWeight:'700' }}>Price Details</Typography>
                             </Box>
-                            <Box>
-                                <Typography>$99.00</Typography>
-                                <Typography>$99.00</Typography>
-                                <Typography>$99.00</Typography>
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    borderBottom: "1px solid grey",
+                                    paddingBottom: "2rem",
+                                }}
+                            >
+                                <Box>
+                                    <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>Price</Typography>
+                                    <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>Discount</Typography>
+                                    <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>Delivery Charge</Typography>
+                                </Box>
+                                <Box>
+                                    <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>$99.00</Typography>
+                                    <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>$99.00</Typography>
+                                    <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>$99.00</Typography>
+                                </Box>
+                            </Box>
+                            <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                                <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>total amount</Typography>
+                                <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>$99.00</Typography>
                             </Box>
                         </Box>
-                        <Box sx={{display:"flex", flexDirection:"row", justifyContent:"space-between"}}>
-                            <Typography>total amount</Typography>
-                            <Typography>$99.00</Typography>
-                        </Box>
-                        </Box>
-                    <Button
-                                    disableRipple
-                                    sx={{
-                                        fontSize: "15px",
-                                        fontFamily: "inherit",
-                                        color: "black",
-                                        fontWeight: "700",
-                                        backgroundColor: "#d9d9d9",
-                                        borderRadius: "81px",
-                                        textTransform: "uppercase", 
-                                        alignSelf:"flex-end",// Change to 'uppercase'
-                                        "&:hover": {
-                                            backgroundColor: "#a0a0a0",
-                                            color: "white",
-                                        },
-                                    }}
-                                >
-                                    remove
-                                </Button>
+                        <Button
+                            disableRipple
+                            sx={{
+                                padding: ".5rem 1rem",
+                                fontFamily: "inherit",
+                                fontSize: "15px",
+                                color: "black",
+                                fontWeight: "700",
+                                backgroundColor: "#d9d9d9",
+                                borderRadius: "81px",
+                                textTransform: "uppercase",
+                                alignSelf: "flex-end", // Change to 'uppercase'
+                                "&:hover": {
+                                    backgroundColor: "#a0a0a0",
+                                    color: "white",
+                                },
+                            }}
+                        >
+                            check out
+                        </Button>
                     </Card>
                 </Box>
             </Stack>
