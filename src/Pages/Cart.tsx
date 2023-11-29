@@ -1,10 +1,21 @@
-import { Stack, Box, Typography, IconButton, Button, Card, CardContent, CardMedia, TextField } from "@mui/material";
+import React from "react";
+import {
+    Stack,
+    Box,
+    Typography,
+    IconButton,
+    Button,
+    Card,
+    CardContent,
+    CardMedia,
+} from "@mui/material";
 import { FaRegRegistered } from "react-icons/fa";
 import HamburgerBar from "../Components/HamburgerBar";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
     const navigate = useNavigate();
+
     return (
         <Stack className="CartMainStack" gap={6}>
             <Box
@@ -20,7 +31,7 @@ const Cart = () => {
             >
                 <Box
                     className="Shop_logo"
-                    sx={{ display: "flex", justifyContent: "center", flexDirection: "column", paddin: "0" }}
+                    sx={{ display: "flex", justifyContent: "center", flexDirection: "column", padding: "0" }}
                 >
                     <Box width={"100%"} sx={{}}>
                         <Box
@@ -76,8 +87,8 @@ const Cart = () => {
                 </Box>
             </Box>
 
-            <Stack className="CartContent" direction={'row'} sx={{justifyContent:"space-around"}} >
-                <Box className="CartProductList" sx={{ widht: "auto", height: "89vh", backgroundColor:"re" }}>
+            <Stack className="CartContent" direction={'row'} sx={{ justifyContent: "space-around" }}>
+                <Box className="CartProductList" sx={{ width: "auto", height: "89vh", backgroundColor: "red" }}>
                     <Card
                         sx={{
                             height: "10rem",
@@ -88,11 +99,7 @@ const Cart = () => {
                             boxShadow: "none",
                         }}
                     >
-                        <CardMedia
-                        // component={'img'}
-                        // height={}
-                        // image='src\Assets\img7.png'
-                        >
+                        <CardMedia>
                             <img alt="" src={"./Assets/img2.png"} style={{ height: "100%", width: "200px" }} />
                         </CardMedia>
                         <CardContent
@@ -112,7 +119,7 @@ const Cart = () => {
                             </Typography>
                             <Box sx={{ fontFamily: "inherit", fontWeight: "700", fontSize: "20px" }}>
                                 <IconButton>-</IconButton>
-                                <input type="number" defaultValue={1} style={{ width: "45px", }} />
+                                <input type="number" defaultValue={1} style={{ width: "45px" }} />
                                 <IconButton>+</IconButton>
                             </Box>
 
@@ -143,8 +150,7 @@ const Cart = () => {
                                         fontWeight: "700",
                                         backgroundColor: "#d9d9d9",
                                         borderRadius: "81px",
-                                        textTransform: "lowercase",
-                                        // padding: ".5rem 1rem",
+                                        textTransform: "uppercase",  // Change to 'uppercase'
                                         "&:hover": {
                                             backgroundColor: "#a0a0a0",
                                             color: "white",
@@ -158,7 +164,7 @@ const Cart = () => {
                     </Card>
                 </Box>
                 <Box className="CartPriceDtails">
-                    <Card sx={{width:'30rem', height:'30rem'}}>
+                    <Card sx={{ width: '30rem', height: '30rem' }}>
                         <Box>
                             <Typography>Price Details</Typography>
                         </Box>
@@ -166,20 +172,16 @@ const Cart = () => {
                             <Box>
                                 <Typography>Price</Typography>
                                 <Typography>Discount</Typography>
-                                <Typography>Delivary Charge</Typography>
+                                <Typography>Delivery Charge</Typography>
                             </Box>
                             <Box>
-                            <Typography>Price</Typography>
+                                <Typography>Price</Typography>
                                 <Typography>Discount</Typography>
-                                <Typography>Delivary Charge</Typography>
+                                <Typography>Delivery Charge</Typography>
                             </Box>
-                            </Box>
-
                         </Box>
                         <Box></Box>
-
                     </Card>
-                    
                 </Box>
             </Stack>
         </Stack>
