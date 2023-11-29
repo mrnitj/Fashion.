@@ -1,4 +1,4 @@
-import { Stack, Box, Typography, IconButton, Button, Card, CardContent, CardMedia } from "@mui/material";
+import { Stack, Box, Typography, IconButton, Button, Card, CardContent, CardMedia, TextField } from "@mui/material";
 import { FaRegRegistered } from "react-icons/fa";
 import HamburgerBar from "../Components/HamburgerBar";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Cart = () => {
     const navigate = useNavigate();
     return (
-        <Stack className="CartMainStack">
+        <Stack className="CartMainStack" gap={6}>
             <Box
                 className="Shop_Navbar"
                 sx={{
@@ -75,48 +75,113 @@ const Cart = () => {
                     </Typography>
                 </Box>
             </Box>
-            <Stack>
 
-            <Box className="CartProductList">
-                <Card sx={{ display: 'flex' }}>
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h5">
-            Live From Space
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-            Mac Miller
-          </Typography>
-        </CardContent>
-        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-          <IconButton aria-label="previous">
-            {/* {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />} */}
-          </IconButton>
-          <IconButton aria-label="play/pause">
-            {/* <PlayArrowIcon sx={{ height: 38, width: 38 }} /> */}
-          </IconButton>
-          <IconButton aria-label="next">
-            {/* {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />} */}
-          </IconButton>
-        </Box>
-      </Box>
-      <CardMedia
-        component="img"
-        sx={{ width: 151 }}
-        image="/static/images/cards/live-from-space.jpg"
-        alt="Live from space album cover"
-      />
-    </Card>
+            <Stack className="CartContent" direction={'row'} sx={{justifyContent:"space-around"}} >
+                <Box className="CartProductList" sx={{ widht: "auto", height: "89vh", backgroundColor:"re" }}>
+                    <Card
+                        sx={{
+                            height: "10rem",
+                            display: "flex",
+                            background: "transparent",
+                            width: "30rem !important",
+                            alignSelf: "center",
+                            boxShadow: "none",
+                        }}
+                    >
+                        <CardMedia
+                        // component={'img'}
+                        // height={}
+                        // image='src\Assets\img7.png'
+                        >
+                            <img alt="" src={"./Assets/img2.png"} style={{ height: "100%", width: "200px" }} />
+                        </CardMedia>
+                        <CardContent
+                            className="view_card_content"
+                            sx={{
+                                fontFamily: "Mina",
+                                backgroundColor: "white",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                                gap: "rem",
+                                width: "100%",
+                            }}
+                        >
+                            <Typography sx={{ fontFamily: "inherit", fontWeight: "700", fontSize: "25px" }}>
+                                black pants
+                            </Typography>
+                            <Box sx={{ fontFamily: "inherit", fontWeight: "700", fontSize: "20px" }}>
+                                <IconButton>-</IconButton>
+                                <input type="number" defaultValue={1} style={{ width: "45px", }} />
+                                <IconButton>+</IconButton>
+                            </Box>
 
-            </Box>
-            <Box className='CartPriceDtails'>
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    flexDirection: "row",
+                                    justifyContent: "space-between",
+                                    alignItems: "center",
+                                    width: "80%",
+                                }}
+                            >
+                                <Typography
+                                    sx={{
+                                        fontWeight: "700",
+                                        fontFamily: "inherit",
+                                        fontSize: "16px",
+                                    }}
+                                >
+                                    $999
+                                </Typography>
+                                <Button
+                                    disableRipple
+                                    sx={{
+                                        fontSize: "15px",
+                                        fontFamily: "inherit",
+                                        color: "black",
+                                        fontWeight: "700",
+                                        backgroundColor: "#d9d9d9",
+                                        borderRadius: "81px",
+                                        textTransform: "lowercase",
+                                        // padding: ".5rem 1rem",
+                                        "&:hover": {
+                                            backgroundColor: "#a0a0a0",
+                                            color: "white",
+                                        },
+                                    }}
+                                >
+                                    remove
+                                </Button>
+                            </Box>
+                        </CardContent>
+                    </Card>
+                </Box>
+                <Box className="CartPriceDtails">
+                    <Card sx={{width:'30rem', height:'30rem'}}>
+                        <Box>
+                            <Typography>Price Details</Typography>
+                        </Box>
+                        <Box>
+                            <Box>
+                                <Typography>Price</Typography>
+                                <Typography>Discount</Typography>
+                                <Typography>Delivary Charge</Typography>
+                            </Box>
+                            <Box>
+                            <Typography>Price</Typography>
+                                <Typography>Discount</Typography>
+                                <Typography>Delivary Charge</Typography>
+                            </Box>
+                            </Box>
 
-            </Box>
+                        </Box>
+                        <Box></Box>
+
+                    </Card>
+                    
+                </Box>
             </Stack>
-
-            
-
-
         </Stack>
     );
 };
