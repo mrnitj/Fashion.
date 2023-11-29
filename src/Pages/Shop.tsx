@@ -475,7 +475,9 @@ const Shop = () => {
                                 transition: "transform 0.2s ease-in-out", // Add transition for smooth scaling
                                 ":hover": {
                                     transform: "scale(1.02)", // Scale on hover
-                                    cursor:'pointer'
+                                    cursor:'pointer',
+                                    boxShadow: '0 15px 10px rgba(0, 0, 0, 0.5)'
+                                    
                                 },
                             }}
                         >

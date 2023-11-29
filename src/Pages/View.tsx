@@ -24,14 +24,7 @@ const View = () => {
         } catch (error) {}
     };
 
-    const getAllproducts =()=>{
-        try {
-        
-            
-        } catch (error) {
-            
-        }
-    }
+  
 
     useEffect(() => {
         getItem();
