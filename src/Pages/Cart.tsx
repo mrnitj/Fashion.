@@ -164,23 +164,49 @@ const Cart = () => {
                     </Card>
                 </Box>
                 <Box className="CartPriceDtails">
-                    <Card sx={{ width: '30rem', height: '30rem' }}>
+                    <Card sx={{ width: '30rem', height: 'auto', display:"flex", flexDirection:"column", gap:'2rem', backgroundColor:'transparent', boxShadow:'none' }}>
+                        <Box sx={{display:"flex", flexDirection:"column", gap:"2rem", backgroundColor:"#E5E0E0", padding:"2rem 0"}}>
+
+
                         <Box>
                             <Typography>Price Details</Typography>
                         </Box>
-                        <Box>
+                        <Box sx={{display:"flex", justifyContent:"space-between", borderBottom:'1px solid grey', paddingBottom:"2rem"}}>
                             <Box>
                                 <Typography>Price</Typography>
                                 <Typography>Discount</Typography>
                                 <Typography>Delivery Charge</Typography>
                             </Box>
                             <Box>
-                                <Typography>Price</Typography>
-                                <Typography>Discount</Typography>
-                                <Typography>Delivery Charge</Typography>
+                                <Typography>$99.00</Typography>
+                                <Typography>$99.00</Typography>
+                                <Typography>$99.00</Typography>
                             </Box>
                         </Box>
-                        <Box></Box>
+                        <Box sx={{display:"flex", flexDirection:"row", justifyContent:"space-between"}}>
+                            <Typography>total amount</Typography>
+                            <Typography>$99.00</Typography>
+                        </Box>
+                        </Box>
+                    <Button
+                                    disableRipple
+                                    sx={{
+                                        fontSize: "15px",
+                                        fontFamily: "inherit",
+                                        color: "black",
+                                        fontWeight: "700",
+                                        backgroundColor: "#d9d9d9",
+                                        borderRadius: "81px",
+                                        textTransform: "uppercase", 
+                                        alignSelf:"flex-end",// Change to 'uppercase'
+                                        "&:hover": {
+                                            backgroundColor: "#a0a0a0",
+                                            color: "white",
+                                        },
+                                    }}
+                                >
+                                    remove
+                                </Button>
                     </Card>
                 </Box>
             </Stack>
