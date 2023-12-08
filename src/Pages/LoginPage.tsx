@@ -37,8 +37,9 @@ const LoginPage = () => {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                console.log(response);
                 if (response.status === 200) {
+                    localStorage.setItem('userId',response.data.data.userId);
+                    
                     alert("user Login success full");
                     navigate("/");
                 }

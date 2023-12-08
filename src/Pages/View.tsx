@@ -34,6 +34,11 @@ const View = () => {
 
     const navigate = useNavigate();
 
+    const addTocartHandler = ()=>{
+        
+    }
+
+
     return (
         <Stack spacing={5} className="view_mainStack">
             <Box
@@ -184,6 +189,8 @@ const View = () => {
                                     ${item.price}
                                 </Typography>
                                 <Button
+
+                                    onClick={addTocartHandler}
                                     disableRipple
                                     sx={{
                                         fontFamily: "inherit",
