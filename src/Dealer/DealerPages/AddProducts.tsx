@@ -46,7 +46,7 @@ export const AddProducts = () => {
                 const response = await axios.post("https://ecommerce-api.bridgeon.in/products", productData, {
                     headers: {
                         Authorization: `Bearer ${token}`,
-                        "Content-Type": "multipart/form-data", // Make sure to set the content type
+                        "Content-Type": "multipart/form-data",
                     },
                 });
 
