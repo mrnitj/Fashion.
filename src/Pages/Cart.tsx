@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Stack, Box, Typography, IconButton, Button, Card, CardContent, CardMedia } from "@mui/material";
 import { FaRegRegistered } from "react-icons/fa";
 import HamburgerBar from "../Components/HamburgerBar";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Cart = () => {
     const navigate = useNavigate();
+    const userId = localStorage.getItem('userId')
+    const userToken = localStorage.getItem('userToken')
+
+    const getInCartHandler =async() =>{
+        try {
+            const response = await axios.get(`https://ecommerce-api.bridgeon.in/users/${userId}/cart`,{
+                headers : {
+                    Authorization: `Bearer ${userToken}`
+                }
+            })
+            console.log(response.data.data.products[0].cart);
+                        
+        } catch (error) {
+            
+        }
+    }
+
+    useEffect(() =>{
+        getInCartHandler()
+    },[])
 
     return (
         <Stack className="CartMainStack" gap={6}>
