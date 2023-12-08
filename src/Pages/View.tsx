@@ -12,7 +12,7 @@ const View = () => {
     const { id } = useParams();
     const [viewProduct, setViewProduct] = useState([]);
     const userId = localStorage.getItem('userId')
-    const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZWFsZXJJZCI6IjY1M2ZkMWMxMmNjZjkzMjgyMzBjNjg3NCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEBtYWlsLmNvbSIsImlhdCI6MTcwMjAzMzk0MSwiZXhwIjoxNzAyMjkzMTQxfQ.rLculnf_lDp8Hf8RdhzqFshrWxVpCYWNMTNuZCuyuKo'
+    const userToken = localStorage.getItem('userToken')
 
     const getItem = async () => {
         try {
@@ -39,12 +39,15 @@ const View = () => {
     const addTocartHandler = async()=>{
 
         try {
-            const addTocartResponse = await axios.post(`https://ecommerce-api.bridgeon.in/users/${userId}/cart/653fd2f87a66b2a442f439e3`,{
-                headers: {
-                    Authorizaton :`Bearer ${userToken}`
-                    
+            const addTocartResponse = await axios.post(
+                `https://ecommerce-api.bridgeon.in/users/${userId}/cart/${id}`,
+                null, // Assuming no data payload, pass null if not needed
+                {
+                  headers: {
+                    Authorization: `Bearer ${userToken}`,
+                  },
                 }
-            })
+              );
 
             console.log(addTocartResponse);
             
