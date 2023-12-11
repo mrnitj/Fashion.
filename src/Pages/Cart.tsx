@@ -7,26 +7,23 @@ import axios from "axios";
 
 const Cart = () => {
     const navigate = useNavigate();
-    const userId = localStorage.getItem('userId')
-    const userToken = localStorage.getItem('userToken')
+    const userId = localStorage.getItem("userId");
+    const userToken = localStorage.getItem("userToken");
 
-    const getInCartHandler =async() =>{
+    const getInCartHandler = async () => {
         try {
-            const response = await axios.get(`https://ecommerce-api.bridgeon.in/users/${userId}/cart`,{
-                headers : {
-                    Authorization: `Bearer ${userToken}`
-                }
-            })
+            const response = await axios.get(`https://ecommerce-api.bridgeon.in/users/${userId}/cart`, {
+                headers: {
+                    Authorization: `Bearer ${userToken}`,
+                },
+            });
             console.log(response.data.data.products[0].cart);
-                        
-        } catch (error) {
-            
-        }
-    }
+        } catch (error) {}
+    };
 
-    useEffect(() =>{
-        getInCartHandler()
-    },[])
+    useEffect(() => {
+        getInCartHandler();
+    }, []);
 
     return (
         <Stack className="CartMainStack" gap={6}>
@@ -156,8 +153,7 @@ const Cart = () => {
                                 <Button
                                     disableRipple
                                     sx={{
-                                        padding:".3rem 1rem"
-                                        ,
+                                        padding: ".3rem 1rem",
                                         fontSize: "13px",
                                         fontFamily: "inherit",
                                         color: "black",
@@ -198,12 +194,14 @@ const Cart = () => {
                                 gap: "2rem",
                                 backgroundColor: "#E5E0E0",
                                 padding: "2rem 2rem",
-                                borderRadius:"20px",
+                                borderRadius: "20px",
                                 boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
                             }}
                         >
-                            <Box sx={{alignSelf:"center"}}>
-                                <Typography sx={{ fontFamily: "inherit", fontSize:"1.5rem", fontWeight:'700' }}>Price Details</Typography>
+                            <Box sx={{ alignSelf: "center" }}>
+                                <Typography sx={{ fontFamily: "inherit", fontSize: "1.5rem", fontWeight: "700" }}>
+                                    Price Details
+                                </Typography>
                             </Box>
                             <Box
                                 sx={{
@@ -214,19 +212,21 @@ const Cart = () => {
                                 }}
                             >
                                 <Box>
-                                    <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>Price</Typography>
-                                    <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>Discount</Typography>
-                                    <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>Delivery Charge</Typography>
+                                    <Typography sx={{ fontFamily: "inherit", fontSize: "1.1rem" }}>Price</Typography>
+                                    <Typography sx={{ fontFamily: "inherit", fontSize: "1.1rem" }}>Discount</Typography>
+                                    <Typography sx={{ fontFamily: "inherit", fontSize: "1.1rem" }}>
+                                        Delivery Charge
+                                    </Typography>
                                 </Box>
                                 <Box>
-                                    <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>$99.00</Typography>
-                                    <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>$99.00</Typography>
-                                    <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>$99.00</Typography>
+                                    <Typography sx={{ fontFamily: "inherit", fontSize: "1.1rem" }}>$99.00</Typography>
+                                    <Typography sx={{ fontFamily: "inherit", fontSize: "1.1rem" }}>$99.00</Typography>
+                                    <Typography sx={{ fontFamily: "inherit", fontSize: "1.1rem" }}>$99.00</Typography>
                                 </Box>
                             </Box>
                             <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-                                <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>total amount</Typography>
-                                <Typography sx={{ fontFamily: "inherit", fontSize:"1.1rem" }}>$99.00</Typography>
+                                <Typography sx={{ fontFamily: "inherit", fontSize: "1.1rem" }}>total amount</Typography>
+                                <Typography sx={{ fontFamily: "inherit", fontSize: "1.1rem" }}>$99.00</Typography>
                             </Box>
                         </Box>
                         <Button
