@@ -103,10 +103,10 @@ const Cart = () => {
             <Stack className="CartContent" direction={"row"} sx={{ justifyContent: "space-around"}}>
                 <Box className="CartProductList" sx={{ width: "auto",  backgroundColor: "re",display:'flex',flexDirection:'column',gap:'2rem', overflow:'auto' }}>
                     {
-                        cartItem.map((item)=>(
+                        cartItem.map((item,index)=>(
 
                     <Card
-                            key={item._id}
+                            key={index}
                         sx={{
                             height: "10rem",
                             display: "flex",
