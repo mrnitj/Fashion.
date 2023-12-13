@@ -29,6 +29,24 @@ const Cart = () => {
         getInCartHandler();
     }, []);
 
+
+    const removeFromCartHandler = async(id:any)=>{
+        try {
+            const removeResponse = await axios.delete(`https://ecommerce-api.bridgeon.in/users/${userId}/cart/${id}`,{
+                headers: {
+                    Authorization: `Bearer ${userToken}`,
+                },
+            });
+            console.log(removeResponse);
+            getInCartHandler()
+
+        } catch (error) {
+            console.log(error);
+            
+            
+        }
+    }
+
     return (
         <Stack className="CartMainStack" gap={6}>
             <Box
@@ -159,6 +177,8 @@ const Cart = () => {
                                     $999
                                 </Typography>
                                 <Button
+                                    onClick={()=>removeFromCartHandler(item._id)}
+                                    
                                     disableRipple
                                     sx={{
                                         padding: ".3rem 1rem",
