@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Stack, Box, Typography, IconButton, Button, Card, CardContent, CardMedia } from "@mui/material";
 import { FaRegRegistered } from "react-icons/fa";
 import HamburgerBar from "../Components/HamburgerBar";
@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Cart = () => {
+    const [cartItem, setCartItem] = useState([])
+
     const navigate = useNavigate();
     const userId = localStorage.getItem("userId");
     const userToken = localStorage.getItem("userToken");
@@ -18,6 +20,8 @@ const Cart = () => {
                 },
             });
             console.log(response.data.data.products[0].cart);
+            setCartItem(response.data.data.products[0].cart)
+
         } catch (error) {}
     };
 
@@ -96,9 +100,13 @@ const Cart = () => {
                 </Box>
             </Box>
 
-            <Stack className="CartContent" direction={"row"} sx={{ justifyContent: "space-around" }}>
-                <Box className="CartProductList" sx={{ width: "auto", height: "89vh", backgroundColor: "re" }}>
+            <Stack className="CartContent" direction={"row"} sx={{ justifyContent: "space-around"}}>
+                <Box className="CartProductList" sx={{ width: "auto",  backgroundColor: "re",display:'flex',flexDirection:'column',gap:'2rem', overflow:'auto' }}>
+                    {
+                        cartItem.map((item)=>(
+
                     <Card
+                            key={item._id}
                         sx={{
                             height: "10rem",
                             display: "flex",
@@ -109,7 +117,7 @@ const Cart = () => {
                         }}
                     >
                         <CardMedia>
-                            <img alt="" src={"./Assets/img2.png"} style={{ height: "100%", width: "200px" }} />
+                            <img alt="" src={item.image} style={{ height: "100%", width: "200px" }} />
                         </CardMedia>
                         <CardContent
                             className="view_card_content"
@@ -124,7 +132,7 @@ const Cart = () => {
                             }}
                         >
                             <Typography sx={{ fontFamily: "inherit", fontWeight: "700", fontSize: "25px" }}>
-                                black pants
+                               {item.title}
                             </Typography>
                             <Box sx={{ fontFamily: "inherit", fontWeight: "700", fontSize: "20px" }}>
                                 <IconButton>-</IconButton>
@@ -172,6 +180,8 @@ const Cart = () => {
                             </Box>
                         </CardContent>
                     </Card>
+                        ))
+                    }
                 </Box>
                 <Box className="CartPriceDtails">
                     <Card
