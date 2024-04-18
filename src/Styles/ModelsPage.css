@@ -1,40 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Mina:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Mina:wght@400;700&display=swap");
 
-@media only screen and (max-width:990px){
-
-    .Model_card{
+@media only screen and (max-width: 990px) {
+    .Model_card {
         width: 100% !important;
-        /* background-color: red !important; */
     }
-
 }
 
-@media (max-width:880px){
-    
-    .Model_card{
+@media (max-width: 880px) {
+    .Model_card {
         /* background-color: violet !important; */
         align-items: center !important;
     }
-    
-    .Model_card_Media{
+
+    .Model_card_Media {
         height: 80% !important;
         background-size: cover !important;
         /* background-color: rebeccapurple !important; */
     }
-    .Model_card_content_P{
+    .Model_card_content_P {
         font-size: 15px !important;
     }
-    .About_btn_more{
+    .About_btn_more {
         font-size: 12px !important;
     }
-    .About_btn_more_icon{
+    .About_btn_more_icon {
         font-size: 35px !important;
         bottom: 15px !important;
     }
-    .About_ibtn_less{
-        size:small !important;
+    .About_ibtn_less {
+        size: small !important;
     }
-    .About_btn_less_icon{
+    .About_btn_less_icon {
         font-size: 2.5rem !important;
     }
-}  
+}
