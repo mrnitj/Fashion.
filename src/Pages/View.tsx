@@ -2,7 +2,7 @@ import "../Styles/View.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { FaRegRegistered } from "react-icons/fa";
 import { Stack, Box, Button, Typography, Card, CardMedia, CardContent } from "@mui/material";
-import HamburgerBar from "../Components/HamburgerBar";
+import HamburgerBar from "../Components/roots/HamburgerBar";
 import FooterSmall from "../Components/FooterSmall";
 import Similar_Products from "../Components/Similar_Products";
 import axios from "axios";

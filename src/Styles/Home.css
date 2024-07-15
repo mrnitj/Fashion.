@@ -1,14 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Mina:wght@400;700&display=swap");
 
-* {
-    /* margin: 0; */
-    padding: 0.1rem 0.3rem 0;
-    box-sizing: border-box;
-    /* background-color: #f3f3f3; */
-}
-body {
-    background-color: #f3f3f3;
-}
+
+
 .Home_logo {
     height: inherit;
     /* background-color: aqua; */

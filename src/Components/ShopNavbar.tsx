@@ -2,7 +2,7 @@ import "../Styles/Shop.css";
 import { styled, Box, Typography } from "@mui/material";
 
 import logo from "../Assets/fashionlogo.png";
-import HamburgerBar from "./HamburgerBar";
+import HamburgerBar from "./roots/HamburgerBar";
 
 const Container = styled(Box)`
     height: 55px;

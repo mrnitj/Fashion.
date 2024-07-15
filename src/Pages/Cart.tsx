@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Stack, Box, Typography, IconButton, Button, Card, CardContent, CardMedia } from "@mui/material";
 import { FaRegRegistered } from "react-icons/fa";
-import HamburgerBar from "../Components/HamburgerBar";
+import HamburgerBar from "../Components/roots/HamburgerBar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 

@@ -7,15 +7,17 @@ import { FaRegRegistered } from "react-icons/fa";
 import ModelsPage from "./ModelsPage";
 import AboutPage from "./AboutPage";
 import Footer from "../Components/Footer";
-import HamburgerBar from "../Components/HamburgerBar";
+import HamburgerBar from "../Components/roots/HamburgerBar";
 import { useNavigate } from "react-router-dom";
 
+import FashionLogo from "../Components/logo/FashionLogo"
+   
 const Home = () => {
     const navigate = useNavigate();
 
     return (
         <>
-            <Stack direction={"column"}>
+            <Stack direction={"column"} >
                 <Box
                     className="Home_Navbar"
                     sx={{
@@ -116,38 +118,7 @@ const Home = () => {
                             className="Home_logo"
                             sx={{ display: "flex", justifyContent: "center", flexDirection: "column" }}
                         >
-                            <Box width={"100%"} sx={{ position: "relative" }}>
-                                <Box
-                                    className="Home_logo_R"
-                                    fontSize={"2.5rem"}
-                                    sx={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                        position: "relative",
-                                        left: "300px",
-                                        top: "60px",
-                                    }}
-                                >
-                                    <FaRegRegistered />
-                                </Box>
-                                <Typography
-                                    className="Home_fashion"
-                                    sx={{ fontSize: "6rem", fontFamily: "Marko one", fontWeight: "bold" }}
-                                >
-                                    fashion.
-                                </Typography>
-                                <Typography
-                                    className="Home_subtitle"
-                                    width={"100%"}
-                                    textAlign={"left"}
-                                    fontFamily={"inter"}
-                                    letterSpacing={"0.3rem"}
-                                    fontWeight={500}
-                                    fontSize={"1rem"}
-                                >
-                                    CRAFTED COLLECTION
-                                </Typography>
-                            </Box>
+                            <FashionLogo/>
                         </Box>
 
                         <Box className="hero">

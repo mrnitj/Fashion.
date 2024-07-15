@@ -15,15 +15,7 @@ export default function HamburgerBar() {
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-    const login = () => {
-        navigate("/login");
-    };
-    const join = () => {
-        navigate("/join");
-    };
+   
 
     return (
         <Box>
@@ -47,40 +39,7 @@ export default function HamburgerBar() {
             >
                 <MoreHorizIcon sx={{ fontSize: "3rem", letterSpacing: "1rem" }} />
             </Button>
-            <Menu
-                id="demo-positioned-menu"
-                aria-labelledby="demo-positioned-button"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "left",
-                }}
-                transformOrigin={{
-                    vertical: "top",
-                    horizontal: "left",
-                }}
-                sx={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
-            >
-                <MenuItem
-                    onClick={() => {
-                        handleClose();
-                        login();
-                    }}
-                >
-                    Login
-                </MenuItem>
-                <MenuItem
-                    sx={{ textAlign: "center" }}
-                    onClick={() => {
-                        handleClose();
-                        join();
-                    }}
-                >
-                    Join
-                </MenuItem>
-            </Menu>
+           
         </Box>
     );
 }
