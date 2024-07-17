@@ -10,14 +10,14 @@ import Footer from "../Components/Footer";
 import HamburgerBar from "../Components/roots/HamburgerBar";
 import { useNavigate } from "react-router-dom";
 
-import FashionLogo from "../Components/logo/FashionLogo"
-   
+import FashionLogo from "../Components/logo/FashionLogo";
+
 const Home = () => {
     const navigate = useNavigate();
 
     return (
         <>
-            <Stack direction={"column"} >
+            <Stack direction={"column"}>
                 <Box
                     className="Home_Navbar"
                     sx={{
@@ -118,7 +118,7 @@ const Home = () => {
                             className="Home_logo"
                             sx={{ display: "flex", justifyContent: "center", flexDirection: "column" }}
                         >
-                            <FashionLogo/>
+                            <FashionLogo />
                         </Box>
 
                         <Box className="hero">
