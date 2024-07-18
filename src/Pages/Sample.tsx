@@ -8,8 +8,8 @@ const Sample = () => {
     return (
         <div>
             <MainNavbar />
-            <HeroSection/>
-            <StorySection/>
+            <HeroSection />
+            <StorySection />
         </div>
     );
 };
