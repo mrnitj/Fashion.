@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <Stack
             className="footerStack"
-            sx={{ backgroundColor: "#D9D9D9", height: "40vh", borderRadius: "20px", padding: "0 2rem 0" }}
+            sx={{ backgroundColor: "#d9d9d9", height: "40vh", borderRadius: "20px", padding: "0 2rem 0" }}
         >
             <Box
                 className="footerMainbox"

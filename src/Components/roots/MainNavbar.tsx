@@ -10,6 +10,13 @@ const Navbar = styled(Container)(({ theme }) => ({
     fontFamily: "inter",
     height: "4rem",
     borderBottom: "1px solid grey",
+    // padding: "0 6rem !important",
+    // [theme.breakpoints.down("md")]: {
+    //     padding: '0 24px !important',
+    // },
+    // [theme.breakpoints.down('sm')]:{
+    //     padding:'0 16px !important'
+    // }
 }));
 const Plus1 = styled(Typography)(({ theme }) => ({
     textTransform: "uppercase",
@@ -52,7 +59,7 @@ const MenuDots = styled(Box)(({ theme }) => ({}));
 
 const MainNavbar = () => {
     return (
-        <Navbar maxWidth={"lg"}>
+        <Navbar maxWidth={"xl"}>
             <Plus1>+1</Plus1>
             <Lookbook>Lookbook</Lookbook>
             <Links>

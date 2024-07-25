@@ -100,7 +100,7 @@ const TextContainer = styled(Box)(({ theme }) => ({
 
 const StorySection = () => {
     return (
-        <MainContainer>
+        <MainContainer maxWidth='lg'>
             <MainTitle>Our Story</MainTitle>
             <GridContainer container spacing={2}>
                 <GridItem item xs={12} md={6}>
