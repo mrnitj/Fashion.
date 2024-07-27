@@ -42,7 +42,7 @@ const SocialMedia = styled(Box)(({ theme }) => ({
     borderTop: "1px solid",
     [theme.breakpoints.down("sm")]: {
         border: "none",
-    },
+    }
 }));
 
 const Footer = () => {
