@@ -18,12 +18,10 @@ const GridContainer = styled(Grid)(({ theme }) => ({
 
 const GridItem = styled(Grid)(({ theme }) => ({}));
 
-
-
 const Lists = styled(List)(({ theme }) => ({
-    [theme.breakpoints.down('sm')]:{
-        borderBottom:'1px solid'
-    }
+    [theme.breakpoints.down("sm")]: {
+        borderBottom: "1px solid",
+    },
 }));
 const Listitm = styled(ListItem)(({ theme }) => ({
     display: "flex",
@@ -34,18 +32,17 @@ const Listitm = styled(ListItem)(({ theme }) => ({
 }));
 const ListText = styled(Typography)(({ theme }) => ({}));
 
-const SocialMedia = styled(Box)(({theme})=>({
+const SocialMedia = styled(Box)(({ theme }) => ({
     height: "3rem",
-    marginTop:'1rem',
-    display:'flex',
-    alignItems:'center',
-    justifyContent:'center',
-    gap:'1rem',
-    borderTop:'1px solid',
-    [theme.breakpoints.down('sm')]:{
-        border:'none'
-    }
-
+    marginTop: "1rem",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "1rem",
+    borderTop: "1px solid",
+    [theme.breakpoints.down("sm")]: {
+        border: "none",
+    },
 }));
 
 const Footer = () => {
@@ -97,9 +94,9 @@ const Footer = () => {
                 </GridItem>
             </GridContainer>
             <SocialMedia>
-                <CiMail style={{fontSize:'25px', color:"black"}}/>
-                <CiInstagram style={{fontSize:'25px', color:"black"}}/>
-                <CiFacebook style={{fontSize:'25px', color:"black"}}/>
+                <CiMail style={{ fontSize: "25px", color: "black" }} />
+                <CiInstagram style={{ fontSize: "25px", color: "black" }} />
+                <CiFacebook style={{ fontSize: "25px", color: "black" }} />
             </SocialMedia>
         </MainContainer>
     );
