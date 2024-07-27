@@ -9,7 +9,10 @@ import Img8 from "../../Assets/img8.png";
 
 // styles---------------
 
-const MainContainer = styled(Container)(({ theme }) => ({}));
+const MainContainer = styled(Container)(({ theme }) => ({
+    marginTop:'1rem',
+    marginBottom:'2rem'
+}));
 
 const GridContainer = styled(Grid)({});
 const GridItem = styled(Grid)(({ theme }) => ({}));
