@@ -4,23 +4,24 @@ import SignupImg from "../Assets/Signup.png";
 
 const MainContainer = styled(Container)(({ theme }) => ({
     overflow: "hidden",
+    padding:'2rem 2rem'
 }));
 const LogoContainer = styled(Box)(({ theme }) => ({
     position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50% , -50%)",
+    top: 0,
+    left: 0,
+    // transform: "translate(-50% , -50%)",
     zIndex: -1,
 }));
 const Logo = styled(Box)(({ theme }) => ({}));
 const Typo = styled(Box)(({ theme }) => ({
-    fontSize: "18rem",
+    fontSize: "15rem",
     fontFamily: "Marko One",
     fontWeight: "bold",
     position: "relative",
     display: "inline-block",
     color: "#00000013",
-    userSelect:'none',
+    userSelect: "none",
     [theme.breakpoints.down("md")]: {
         fontSize: "10rem",
     },
@@ -45,25 +46,52 @@ const GridItem = styled(Grid)(({ theme }) => ({
 }));
 
 const ImageContainer = styled(Box)(({ theme }) => ({
-    
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  
 }));
 const TexFieldContainer = styled(Box)(({ theme }) => ({
-    height:'100%',
-    width:'100%',
-    display:'flex',
-    alignItems:'center'
+    height: "100%",
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
 }));
 
-const CustomFormContrroll = styled(FormControl)(({theme})=>({
-    width:'100%',
-    
-
-}))
-const Labels = styled(Typography)(({ theme }) => ({}));
+const CustomFormContrroll = styled(FormControl)(({ theme }) => ({
+    width: "100%",
+}));
+const Labels = styled(Typography)(({ theme }) => ({
+    fontFamily: "Mina",
+    marginBottom: ".5rem",
+}));
 const Inputs = styled(Box)(({ theme }) => ({
-    height:"2rem",
-    border:'1px solid black',
-    width:'100%'
+    height: "2.5rem",
+    marginBottom: "1.5rem",
+    padding: "0 1rem",
+    borderRadius: "50px",
+    backgroundColor: "white",
+    width: "80%",
+    [theme.breakpoints.down('sm')]:{
+        width:'100%'
+    }
+}));
+const CustomInputBase = styled(InputBase)(({ theme }) => ({
+    width: "100%",
+    height: "100%",
+}));
+
+const Button = styled(Typography)(({ theme }) => ({
+    padding: ".3rem 1.5rem",
+    border: "1px solid black",
+    width: "fit-content",
+    cursor: "pointer",
+    boxShadow: "3px 3px 0px 0px rgba(0,0,0,0.75)",
+    transition: "all 0.15s",
+    marginBottom: "1rem",
+    "&:active": {
+        boxShadow: "none",
+    },
 }));
 
 const SignUp = () => {
@@ -84,16 +112,25 @@ const SignUp = () => {
                     <GridItem item xs={12} md={6}>
                         <TexFieldContainer>
                             <CustomFormContrroll>
-                                <Labels component='label'>User name</Labels>
-                                <Inputs><InputBase placeholder="username"/></Inputs>
-                                <Labels component='label'>User name</Labels>
-                                <Inputs><InputBase/></Inputs>
-                                <Labels component='label'>User name</Labels>
-                                <Inputs><InputBase/></Inputs>
-                                <Labels component='label'>User name</Labels>
-                                <Inputs><InputBase/></Inputs>
-                                <Labels component='label'>User name</Labels>
-                                <Inputs><InputBase/></Inputs>
+                                <Labels component="label">Name</Labels>
+                                <Inputs>
+                                    <CustomInputBase placeholder="name" type="text" />
+                                </Inputs>
+                                <Labels component="label">Email</Labels>
+                                <Inputs>
+                                    <CustomInputBase placeholder="email" type="email" />
+                                </Inputs>
+                                <Labels component="label">Password</Labels>
+                                <Inputs>
+                                    <CustomInputBase placeholder="password" type="password" />
+                                </Inputs>
+                                <Button component="a">SignUp</Button>
+                                <Typography variant="caption">
+                                    don't have a account{" "}
+                                    <span>
+                                        <a href="">login</a>
+                                    </span>
+                                </Typography>
                             </CustomFormContrroll>
                         </TexFieldContainer>
                     </GridItem>
