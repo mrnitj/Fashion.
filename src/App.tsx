@@ -11,15 +11,16 @@ import { DealerHome } from "./Dealer/DealerPages/DealerHome";
 import { DealerLogin } from "./Dealer/DealerPages/DealerLogin";
 import { EditProduct } from "./Dealer/DealerPages/EditProduct";
 import Sample from "./Pages/Sample";
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
 
 const App = () => {
     return (
         <>
-            <Stack sx={{ backgroundColor: "lightpin" }} spacing={6}>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<LoginPage />} />
-                    <Route path="/signup" element={<SignUpPage />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<SignUp />} />
                     <Route path="/shop" element={<Shop />} />
                     <Route path="/view/:id" element={<View />} />
                     <Route path="/cart" element={<Cart />} />
@@ -28,7 +29,6 @@ const App = () => {
                     <Route path="/updateproduct/:id" element={<EditProduct/>} />
                     <Route path="/sample" element={<Sample/>} />
                 </Routes>
-            </Stack>
         </>
     );
 };
