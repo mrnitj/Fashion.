@@ -4,13 +4,12 @@ import SignupImg from "../Assets/Signup.png";
 
 const MainContainer = styled(Container)(({ theme }) => ({
     overflow: "hidden",
-    padding:'2rem 2rem'
+    padding: "2rem 2rem",
 }));
 const LogoContainer = styled(Box)(({ theme }) => ({
     position: "absolute",
     top: 0,
     left: 0,
-    // transform: "translate(-50% , -50%)",
     zIndex: -1,
 }));
 const Logo = styled(Box)(({ theme }) => ({}));
@@ -41,15 +40,12 @@ const SignUpContainer = styled(Box)(({ theme }) => ({
     zIndex: 1,
 }));
 const GridContainer = styled(Grid)(({ theme }) => ({}));
-const GridItem = styled(Grid)(({ theme }) => ({
-    // background:'yellow'
-}));
+const GridItem = styled(Grid)(({ theme }) => ({}));
 
 const ImageContainer = styled(Box)(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-  
 }));
 const TexFieldContainer = styled(Box)(({ theme }) => ({
     height: "100%",
@@ -72,9 +68,9 @@ const Inputs = styled(Box)(({ theme }) => ({
     borderRadius: "50px",
     backgroundColor: "white",
     width: "80%",
-    [theme.breakpoints.down('sm')]:{
-        width:'100%'
-    }
+    [theme.breakpoints.down("sm")]: {
+        width: "100%",
+    },
 }));
 const CustomInputBase = styled(InputBase)(({ theme }) => ({
     width: "100%",
