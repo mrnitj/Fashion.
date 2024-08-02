@@ -1,6 +1,6 @@
-import { Box, Container, FormControl, Grid, InputBase, InputLabel, styled, Typography } from "@mui/material";
-import React from "react";
+import { Box, Container, FormControl, Grid, InputBase, styled, Typography } from "@mui/material";
 import SignupImg from "../Assets/Signup.png";
+import { Link } from "react-router-dom";
 
 const MainContainer = styled(Container)(({ theme }) => ({
     overflow: "hidden",
@@ -124,7 +124,7 @@ const SignUp = () => {
                                 <Typography variant="caption">
                                     don't have a account{" "}
                                     <span>
-                                        <a href="">login</a>
+                                        <Link to={"/login"}>login</Link>
                                     </span>
                                 </Typography>
                             </CustomFormContrroll>
