@@ -1,5 +1,4 @@
 import React from "react";
-
 import { AppBar, Box, Container, styled, Typography } from "@mui/material";
 import HamburgerBar from "./HamburgerBar";
 
@@ -51,9 +50,28 @@ const LinkItems = styled(Typography)(({ theme }) => ({
     fontFamily: "inherit",
     fontWeight: 700,
     textTransform: "uppercase",
+    position: "relative",
+    cursor:'pointer',
     [theme.breakpoints.down("sm")]: {
         fontSize: "0.9rem",
     },
+    '&::before': {
+        content: '""',
+        height: '2px',
+        width: '100%',
+        background: 'black',
+        position: 'absolute',
+        bottom: '0',
+        left: '0',
+        transition: 'transform 0.5s',
+        transformOrigin: 'right',
+        transitionTimingFunction: 'cubic-bezier(0.5, 1.6, 0.4, 0.7)',
+        transform: 'scaleX(0)',
+    },
+    '&:hover::before': {
+        transform: 'scaleX(1)',
+        transformOrigin: 'left',
+    }
 }));
 const MenuDots = styled(Box)(({ theme }) => ({}));
 
