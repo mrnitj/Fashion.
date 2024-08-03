@@ -39,7 +39,11 @@ const Typo = styled(Box)(({ theme }) => ({
 const SignUpContainer = styled(Box)(({ theme }) => ({
     zIndex: 1,
 }));
-const GridContainer = styled(Grid)(({ theme }) => ({}));
+const GridContainer = styled(Grid)(({ theme }) => ({
+    [theme.breakpoints.down('md')]:{
+        flexDirection:'column-reverse'
+    }
+}));
 const GridItem = styled(Grid)(({ theme }) => ({}));
 
 const ImageContainer = styled(Box)(({ theme }) => ({
@@ -122,7 +126,7 @@ const SignUp = () => {
                                 </Inputs>
                                 <Button component="a">SignUp</Button>
                                 <Typography variant="caption">
-                                    don't have a account{" "}
+                                    already have a account{" "}
                                     <span>
                                         <Link to={"/login"}>login</Link>
                                     </span>
