@@ -1,6 +1,10 @@
 import React from "react";
 import { AppBar, Box, Container, styled, Typography } from "@mui/material";
+
+import { PiBagThin } from "react-icons/pi";
+
 import HamburgerBar from "./HamburgerBar";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = styled(Container)(({ theme }) => ({
     display: "flex",
@@ -9,6 +13,10 @@ const Navbar = styled(Container)(({ theme }) => ({
     fontFamily: "inter",
     height: "4rem",
     borderBottom: "1px solid grey",
+    position:'sticky',
+    top:'0',
+    zIndex:1,
+    background:'#f3f3f3'
     // padding: "0 6rem !important",
     // [theme.breakpoints.down("md")]: {
     //     padding: '0 24px !important',
@@ -52,6 +60,8 @@ const LinkItems = styled(Typography)(({ theme }) => ({
     textTransform: "uppercase",
     position: "relative",
     cursor:'pointer',
+    display:'grid',
+    placeItems:'center',
     [theme.breakpoints.down("sm")]: {
         fontSize: "0.9rem",
     },
@@ -64,24 +74,27 @@ const LinkItems = styled(Typography)(({ theme }) => ({
         bottom: '0',
         left: '0',
         transition: 'transform 0.5s',
-        transformOrigin: 'right',
+        transformOrigin: 'left',
         transitionTimingFunction: 'cubic-bezier(0.5, 1.6, 0.4, 0.7)',
-        transform: 'scaleX(0)',
+        transform: 'scaleX(1)',
     },
     '&:hover::before': {
-        transform: 'scaleX(1)',
-        transformOrigin: 'left',
+        transform: 'scaleX(0)',
+        transformOrigin: 'right',
     }
 }));
 const MenuDots = styled(Box)(({ theme }) => ({}));
 
 const MainNavbar = () => {
+
+    const navigate =  useNavigate()
+
     return (
         <Navbar maxWidth={"xl"}>
             <Plus1>+1</Plus1>
             <Lookbook>Lookbook</Lookbook>
             <Links>
-                <LinkItems>shop</LinkItems>
+                <LinkItems><PiBagThin style={{fontSize:'20px'}} /></LinkItems>
                 <LinkItems>subscribe</LinkItems>
                 <MenuDots>
                     <HamburgerBar />

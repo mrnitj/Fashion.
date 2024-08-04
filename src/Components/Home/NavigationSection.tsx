@@ -10,8 +10,8 @@ import Img8 from "../../Assets/img8.png";
 // styles---------------
 
 const MainContainer = styled(Container)(({ theme }) => ({
-    marginTop:'1rem',
-    marginBottom:'2rem'
+    marginTop: "1rem",
+    marginBottom: "2rem",
 }));
 
 const GridContainer = styled(Grid)({});
@@ -23,8 +23,7 @@ const GridContent = styled(Box)(({ theme }) => ({
     backgroundPosition: "bottom",
     backgroundRepeat: "no-repeat",
     position: "relative",
-    borderRadius:'1rem'
-
+    borderRadius: "1rem",
 }));
 
 const MainHead = styled(Typography)(({ theme }) => ({
@@ -46,63 +45,56 @@ const Sticky = styled(Box)(({ theme }) => ({
     width: "100%",
     position: "sticky",
     top: "calc(100% - 25vh)",
-    display:'flex',
-    flexDirection:'column',
-    placeItems:'center',
-    justifyContent:'center',
-    gap:'2rem',
-    marginBottom:'2rem'
+    display: "flex",
+    flexDirection: "column",
+    placeItems: "center",
+    justifyContent: "center",
+    gap: "2rem",
+    marginBottom: "2rem",
 }));
 
-
-
 const SubHead = styled(Typography)(({ theme }) => ({
-    fontSize:'1.4em',
-    fontWeight:700,
-    color:'#ffff',
-    position:'static',
-    top:0
-    
-
+    fontSize: "1.4em",
+    fontWeight: 700,
+    color: "#ffff",
+    position: "static",
+    top: 0,
 }));
 const Button = styled(Typography)(({ theme }) => ({
     textTransform: "uppercase",
     textDecoration: "none",
     color: "#ffffff",
     backgroundColor: "#d3c8c839",
-    border:'1.2px solid #ffffff',
-    fontWeight:700,
-    padding:'1.2rem 5rem',
-    position:'relative',
-    transition:'all 0.15s',
-    "&::before":{
-        content:"'explore'",
-        position:'absolute',
-        top:'50%',
-        left:'50%',
-        transform:'translate(-50%, -50%)'
+    border: "1.2px solid #ffffff",
+    fontWeight: 700,
+    padding: "1.2rem 5rem",
+    position: "relative",
+    transition: "all 0.15s",
+    "&::before": {
+        content: "'explore'",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
     },
-    "&:hover":{
-        padding:'1rem 4.8rem'
-    }
-
-    
+    "&:hover": {
+        padding: "1rem 4.8rem",
+    },
 }));
 
 // styles---------------
 
 const NavigationSection = () => {
     return (
-        <MainContainer>
+        <MainContainer maxWidth='xl'>
             <GridContainer container spacing={2}>
                 <GridItem item xs={12} md={6}>
                     <GridContent sx={{ backgroundImage: `url(${Img5})` }}>
                         <MainHead variant="h6">men</MainHead>
                         <StickyContainer>
                             <Sticky>
-                                
                                 <SubHead>Mens over coat</SubHead>
-                                <Button component={Link}></Button>
+                                <Button component={Link} to="/shop/men"></Button>
                             </Sticky>
                         </StickyContainer>
                     </GridContent>
@@ -112,9 +104,8 @@ const NavigationSection = () => {
                         <MainHead variant="h6">women</MainHead>
                         <StickyContainer>
                             <Sticky>
-                            <SubHead>Woments New Fashion</SubHead>
-                            <Button component={Link}></Button>
-                             
+                                <SubHead>Woments New Fashion</SubHead>
+                                <Button component={Link} to="/shop/women"></Button>
                             </Sticky>
                         </StickyContainer>
                     </GridContent>

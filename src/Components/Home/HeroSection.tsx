@@ -55,7 +55,7 @@ const SubHeader = styled(Box)(({ theme }) => ({
 
 const HeroSection = () => {
     return (
-        <MainContainer maxWidth="lg">
+        <MainContainer maxWidth="xl">
             <GridContainer container spacing={{xs:2,sm:1}}>
                 <GridItem item xs={12} sm={6} md={4}>
                     <LogoContainer>
