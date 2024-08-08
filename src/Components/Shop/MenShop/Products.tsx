@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import FilterBox from "./FilterBox";
 
 const MainContainer = styled(Box)(({ theme }) => ({
-    minheight: "200vh",
+    minHeight: "200vh",
     width: "100%",
 }));
 
@@ -14,17 +14,21 @@ const FilterContainer = styled(Box)(({ theme }) => ({
     zIndex: 1,
 }));
 
-const ProductContainer =styled(Box)(({theme})=>({}))
-const GridContainer =styled(Grid)(({theme})=>({}))
-const GridItem =styled(Grid)(({theme})=>({}))
+const ProductContainer = styled(Box)(({ theme }) => ({}));
+const GridContainer = styled(Grid)(({ theme }) => ({}));
+const GridItem = styled(Grid)(({ theme }) => ({}));
 
-const ItemCard = styled(Box)(({theme})=>({
-    background:'blue',
-    maxHeight:"250px",
-    overflow:'hidden',
-    maxWidth:'250px',
-    minWidth:"250px"
-}))
+const ItemCard = styled(Box)(({ theme }) => ({
+    background: "blue",
+    maxHeight: "250px",
+    // minHeight:'200px',
+    overflow: "hidden",
+    // maxWidth:'250px',
+    // minWidth:"250px"
+    [theme.breakpoints.up("sm")]: {
+        minHeight: "300px",
+    },
+}));
 
 const Products = () => {
     return (
@@ -34,12 +38,14 @@ const Products = () => {
             </FilterContainer>
             <ProductContainer>
                 <GridContainer container spacing={2} p={2}>
-                    <GridItem item xs={6} md={3} xl={2}>
+                    <GridItem item xs={6} md={4} lg={3} xl={2}>
                         <ItemCard>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sit iure vero autem itaque odio soluta et eaque voluptates vel. Eveniet architecto ut facilis dignissimos. Fugiat necessitatibus eligendi atque at eos, illum officia dolor quidem vitae recusandae voluptatibus saepe excepturi, optio sint dolorum odio laudantium, itaque tempora eveniet doloremque distinctio!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sit iure vero autem itaque odio
+                            soluta et eaque voluptates vel. Eveniet architecto ut facilis dignissimos. Fugiat necessitatibus
+                            eligendi atque at eos, illum officia dolor quidem vitae recusandae voluptatibus saepe excepturi,
+                            optio sint dolorum odio laudantium, itaque tempora eveniet doloremque distinctio!
                         </ItemCard>
                     </GridItem>
-                   
                 </GridContainer>
             </ProductContainer>
         </MainContainer>

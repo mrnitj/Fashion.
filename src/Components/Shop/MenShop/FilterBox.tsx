@@ -26,20 +26,32 @@ const FilterContainer = styled(Container)(({ theme }) => ({
     justifyContent: "space-between",
 }));
 
-const NewBox = styled(Box)(({ theme }) => ({}));
+const NewBox = styled(Box)(({ theme }) => ({
+    [theme.breakpoints.down("md")]: {
+        display: "none",
+    },
+}));
 
 const Links = styled(Typography)(({ theme }) => ({
     textDecoration: "none",
     color: "black",
     fontFamily: "mina",
     fontWeight: 700,
-    fontSize: "15px",
+    fontSize: "1em",
 }));
 
 const FiltersBox = styled(Box)(({ theme }) => ({
     display: "flex",
     flexDirection: "row",
     gap: "2rem",
+    // background:'red',
+    // flex:1,
+    [theme.breakpoints.down("md")]: {
+        flex: 1,
+        justifyContent: "space-between",
+        gap: ".5rem",
+        // padding:'0 1em'
+    },
 }));
 
 const MenuButton = styled(Box)(({ theme }) => ({
@@ -51,15 +63,18 @@ const MenuButton = styled(Box)(({ theme }) => ({
     alignItems: "center",
     justifyContent: "center",
     textTransform: "uppercase",
-    fontSize: "12px",
+    fontSize: "0.8em",
     fontFamily: "mina",
     fontWeight: 700,
     "& .icon": {
-        marginLeft: ".4rem",
+        marginLeft: ".5em",
         display: "grid",
         placeItems: "center",
         fontSize: "15px",
     },
+    [theme.breakpoints.down('md')]:{
+        fontSize:'.7em'
+    }
 }));
 
 const FilterBox = () => {
@@ -218,11 +233,11 @@ const FilterBox = () => {
                         >
                             <List sx={{ p: "0", m: "0" }}>
                                 <ListItem sx={{ p: "0", m: "0" }}>
-                                    <ListItemButton>
+                                    <ListItemButton sx={{backgroundColor:'#000'}}>
                                         <ListItemText>
                                             <Typography
                                                 sx={{
-                                                    color: "black",
+                                                    color: "#fff",
                                                     fontSize: "12px",
                                                     p: "0",
                                                     m: "0",
